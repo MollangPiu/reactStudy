@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import {Component, useState} from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
@@ -63,7 +63,121 @@ class App extends Component {
   }
 }
 
+/** React 기본 */
+function Deafult(props) {
+  
+  return(
+    <div>
+      <h1>기본</h1>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/evt1');
+      }} >이벤트 처리하기</a><br/>
+    </div>
+  )
+}
 
+/** 메인 화면 */
+function MainAction(props) {
+  return(
+    <div>
+      <h1 h1>Main</h1>
+      <a className="mainDiv" onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/first');
+      }}>구구단</a><br/>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/study1');
+      }}>study</a><br/>
+
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/study2');
+      }}>props obj 넘기기</a><br/>
+
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('./study3')
+      }}>props list 넘기기</a><br/>
+
+
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp4');
+      }}>state와 comp 넘기기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp5');
+      }}>장바구니 - com + state</a>
+
+    </div>
+  )
+}
+
+function State(props) {
+  return (
+    <div>
+<h1>State 사용하기</h1>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('./sta1');
+      }}>state 사용하기</a><br/>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('./sta2');
+
+      }}>event State값 바꾸기</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./sta3');
+      }}>계산기 만들기</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./sta4');
+      }}
+      >구구단 만들기</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('./sta5');
+      }}>state Obj 활용</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./sta6');
+      }}>List 활용하기</a>
+    </div>
+  )
+
+}
+
+/** 응용하기 */
+function Application(props) {
+  return(
+    <div>
+      <h1>응용하기</h1>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/json1')
+      }}>Json 불러오기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/json2')
+      }}>JSON 불러오기 필터처리하기</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/json3');
+      }}>JSON 필터링 COMPONENT</a><br/>
+    </div>
+  )
+}
+
+function Effect(props) {
+  return(
+    <div>
+      Effect
+    </div>
+  )
+}
 
 function Main() {
 
@@ -72,92 +186,37 @@ function Main() {
     movePage(url);
   }
 
+  const [화면, 변경화면] = useState(false);
+  const propMove = url => {
+    movePage(url);
+  }
 
   return(
     <div>
-      <h1>기본</h1>
+      <nav className='navArea'>
+      <div className='btnArea' onClick={e=> {
+        변경화면('default');
+      }
+      }>기본</div>
+      <div className='btnArea' onClick={e=> {
+        변경화면('main');
+      }}>mian</div>
+      <div className='btnArea' onClick={e=> {
+        변경화면('state');
+      }}>State</div>
+      <div className='btnArea' onClick={e=> {
+        변경화면('application');
+      }}>응용하기</div>
+      <div className='btnArea' onClick={e=> {
+        변경화면('effect');
+      }}>Effect</div>
+      </nav>
+      {화면 === 'default' && <Deafult onPage={propMove}/>}
+      {화면 === 'main' && <MainAction onPage={propMove}/>}
+      {화면 === 'state' && <State onPage={propMove}/>}
+      {화면 === 'application' && <Application onPage={propMove}/>}
+      {화면 === 'effect' && <Effect onPage={propMove}/>}
       
-
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        move('/evt1');
-      }} >이벤트 처리하기</a><br/>
-
-      <h1>Main</h1>
-      <a className="mainDiv" onClick={function(e) {
-        e.preventDefault();
-        move('/first');
-      }}>구구단</a><br/>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        move('/study1');
-      }}>study</a><br/>
-
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        move('/study2');
-      }}>props obj 넘기기</a><br/>
-
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        move('./study3')
-      }}>props list 넘기기</a><br/>
-
-
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        move('./comp4');
-      }}>state와 comp 넘기기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        move('./comp5');
-      }}>장바구니 - com + state</a>
-
-
-
-
-
-      <h1>State 사용하기</h1>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        move('./sta1');
-      }}>state 사용하기</a><br/>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        move('./sta2');
-
-      }}>event State값 바꾸기</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        move('./sta3');
-      }}>계산기 만들기</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        move('./sta4');
-      }}
-      >구구단 만들기</a><br/>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        move('./sta5');
-      }}>state Obj 활용</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        move('./sta6');
-      }}>List 활용하기</a>
-
-      <h1>응용하기</h1>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        move('/json1')
-      }}>Json 불러오기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        move('/json2')
-      }}>JSON 불러오기 필터처리하기</a><br/>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        move('/json3');
-      }}>JSON 필터링 COMPONENT</a><br/>
     </div>
   )
 }
