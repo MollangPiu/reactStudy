@@ -21,7 +21,7 @@ import Stat4 from './sta/Sta4'
 import Stat5 from './sta/Sta5'
 import Stat6 from './sta/Sta6'
 
-import Eft1 from './effect/Eft1'
+import Eft1 from './eft/Eft1'
 
 
 class App extends Component {
@@ -175,6 +175,7 @@ function Application(props) {
   )
 }
 
+/** Effect 기능 */
 function Effect(props) {
   return(
     <div>

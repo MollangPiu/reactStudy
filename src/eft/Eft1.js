@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 function Study() {
+    alert('test');
 
     const [sta, setSta] = useState(0);
     const [sta1, setSta1] = useState(5);
