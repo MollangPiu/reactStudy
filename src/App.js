@@ -21,6 +21,8 @@ import Stat4 from './sta/Sta4'
 import Stat5 from './sta/Sta5'
 import Stat6 from './sta/Sta6'
 
+import Eft1 from './effect/Eft1'
+
 
 class App extends Component {
   constructor(props) {
@@ -56,6 +58,8 @@ class App extends Component {
             <Route path={'/sta4'} element={<Stat4 />} />
             <Route path={'/sta5'} element={<Stat5 />} />
             <Route path={'/sta6'} element={<Stat6 />} />
+
+            <Route parh={'./eft1'} element={<Eft1 />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -118,7 +122,7 @@ function MainAction(props) {
 function State(props) {
   return (
     <div>
-<h1>State 사용하기</h1>
+    <h1>State 사용하기</h1>
       <a className='mainDiv' onClick={function(e) {
         e.preventDefault();
         props.onPage('./sta1');
@@ -174,7 +178,11 @@ function Application(props) {
 function Effect(props) {
   return(
     <div>
-      Effect
+      <h1>Effect</h1>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('./eft1');
+      }}>Effect 동작 1</a>
     </div>
   )
 }
@@ -194,22 +202,22 @@ function Main() {
   return(
     <div>
       <nav className='navArea'>
-      <div className='btnArea' onClick={e=> {
-        변경화면('default');
-      }
-      }>기본</div>
-      <div className='btnArea' onClick={e=> {
-        변경화면('main');
-      }}>mian</div>
-      <div className='btnArea' onClick={e=> {
-        변경화면('state');
-      }}>State</div>
-      <div className='btnArea' onClick={e=> {
-        변경화면('application');
-      }}>응용하기</div>
-      <div className='btnArea' onClick={e=> {
-        변경화면('effect');
-      }}>Effect</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('default');
+        }
+        }>기본</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('main');
+        }}>mian</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('state');
+        }}>State</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('application');
+        }}>응용하기</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('effect');
+        }}>Effect</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
