@@ -22,6 +22,10 @@ import Stat5 from './sta/Sta5'
 import Stat6 from './sta/Sta6'
 
 import Eft1 from './eft/Eft1'
+import Eft2 from './eft/Eft2'
+
+import Ax1 from './ax/ax01'
+import Ax2 from './ax/ax02'
 
 
 class App extends Component {
@@ -59,7 +63,11 @@ class App extends Component {
             <Route path={'/sta5'} element={<Stat5 />} />
             <Route path={'/sta6'} element={<Stat6 />} />
 
-            <Route parh={'./eft1'} element={<Eft1 />} />
+            <Route path={'/eft1'} element={<Eft1 />} />
+            <Route path={'/eft2'} element={<Eft2 />} />
+
+            <Route path={'/ax1'} element={<Ax1/>}/>
+            <Route path={'/ax2'} element={<Ax2/>}/>
           </Routes>
         </BrowserRouter>
       </div>
@@ -182,8 +190,28 @@ function Effect(props) {
       <h1>Effect</h1>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('./eft1');
-      }}>Effect 동작 1</a>
+        props.onPage('/eft1');
+      }}>Effect 기본동작 ( state 전부 )</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/eft2');
+      }}>Effect 기본동작 ( sate 일부 )</a><br/>
+    </div>
+  )
+}
+
+function Axi(props) {
+  return (
+    <div>
+      <h1>axios</h1>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/ax1');
+      }}>Axios Get 방식</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/ax2');
+      }}>Axios Post 방식</a>
     </div>
   )
 }
@@ -219,12 +247,16 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('effect');
         }}>Effect</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('axios');
+        }}>Axios</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
       {화면 === 'state' && <State onPage={propMove}/>}
       {화면 === 'application' && <Application onPage={propMove}/>}
       {화면 === 'effect' && <Effect onPage={propMove}/>}
+      {화면 === 'axios' && <Axi onPage={propMove}/>}
       
     </div>
   )

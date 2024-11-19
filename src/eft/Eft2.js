@@ -6,8 +6,12 @@ function Study() {
     const [값2, 값변경2] = useState(0);
 
     useEffect(() => {
-        console.log('state 변경!');
-    })
+        console.log('sta 변경');
+    }, [sta]);
+
+    useEffect(()=> {
+        console.log('값2 변경');
+    }, [값2])
 
     return (
         <div>
