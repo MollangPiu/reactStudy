@@ -23,9 +23,11 @@ import Stat6 from './sta/Sta6'
 
 import Eft1 from './eft/Eft1'
 import Eft2 from './eft/Eft2'
+import Eft3 from './eft/Eft3'
 
 import Ax1 from './ax/ax01'
 import Ax2 from './ax/ax02'
+import Ax3 from './ax/ax03'
 
 
 class App extends Component {
@@ -65,9 +67,11 @@ class App extends Component {
 
             <Route path={'/eft1'} element={<Eft1 />} />
             <Route path={'/eft2'} element={<Eft2 />} />
+            <Route path={'/eft3'} element={<Eft3 />} />
 
             <Route path={'/ax1'} element={<Ax1/>}/>
             <Route path={'/ax2'} element={<Ax2/>}/>
+            <Route path={'/ax3'} element={<Ax3/>}/>
           </Routes>
         </BrowserRouter>
       </div>
@@ -196,6 +200,10 @@ function Effect(props) {
         e.preventDefault();
         props.onPage('/eft2');
       }}>Effect 기본동작 ( sate 일부 )</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/eft3');
+      }}>Effect 사용하기</a><br/>
     </div>
   )
 }
@@ -211,7 +219,12 @@ function Axi(props) {
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
         props.onPage('/ax2');
-      }}>Axios Post 방식</a>
+      }}>Axios Post 방식</a><br/>
+      <a className='mainDiv' onClick={ e => {
+        e.preventDefault();
+        props.onPage('/ax3');
+      }}>Axios api 만들기</a><br/>
+
     </div>
   )
 }
