@@ -21,6 +21,7 @@ import Stat4 from './sta/Sta4'
 import Stat5 from './sta/Sta5'
 import Stat6 from './sta/Sta6'
 import Redu1 from './sta/Reduce1'
+import Redu2 from './sta/Reduce2'
 
 import Eft1 from './eft/Eft1'
 import Eft2 from './eft/Eft2'
@@ -67,6 +68,7 @@ class App extends Component {
             <Route path={'/sta6'} element={<Stat6 />} />
 
             <Route path={'/Redu1'} element={<Redu1 />} />
+            <Route path={'/Redu2'} element={<Redu2 />} />
 
             <Route path={'/eft1'} element={<Eft1 />} />
             <Route path={'/eft2'} element={<Eft2 />} />
@@ -169,6 +171,11 @@ function State(props) {
         e.preventDefault();
         props.onPage('./redu1');
       }}>Reducer 사용하기 1</a><br/>
+
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./redu2');
+      }}>Reducer 사용하기 obj</a><br/>
     </div>
   )
 
