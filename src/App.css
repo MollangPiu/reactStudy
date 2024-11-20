@@ -12,6 +12,7 @@
   cursor: pointer;
 }
 
+/* 테이블 선 삭제 */
 .mainTable {
   border-collapse: collapse;
 }
