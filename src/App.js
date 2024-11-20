@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import Json1 from './def/Json1'
 import Json2 from './def/Json2' 
 import Json3 from './def/Json3' 
+import Img1 from './def/img1'
 
 import Evt1 from './evt/Evt1'
 
@@ -52,6 +53,7 @@ class App extends Component {
             <Route path={'/json1'} element={<Json1 />}></Route>
             <Route path={'/json2'} element={<Json2 />}></Route>
             <Route path={'/json3'} element={<Json3 />}></Route>
+            <Route path={'/img1'} element={<Img1 />} />
 
             <Route path={"/"} element={<Main />} ></Route>
             <Route path={"/first"} element={<First />} />
@@ -90,6 +92,11 @@ function Deafult(props) {
   return(
     <div>
       <h1>기본</h1>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./img1');
+      }}>이미지 불러오기</a><br/>
+
       <a className='mainDiv' onClick={function(e) {
         e.preventDefault();
         props.onPage('/evt1');
@@ -98,7 +105,7 @@ function Deafult(props) {
   )
 }
 
-/** 메인 화면 */
+/** 메인 화면, Component */
 function MainAction(props) {
   return(
     <div>
