@@ -33,6 +33,9 @@ import Ax1 from './ax/ax01'
 import Ax2 from './ax/ax02'
 import Ax3 from './ax/ax03'
 
+import Login from './login/login'
+import Signup from './login/Signup'
+
 
 class App extends Component {
   constructor(props) {
@@ -81,6 +84,9 @@ class App extends Component {
             <Route path={'/ax1'} element={<Ax1/>}/>
             <Route path={'/ax2'} element={<Ax2/>}/>
             <Route path={'/ax3'} element={<Ax3/>}/>
+
+            <Route path={'/login'} element={<Login/>}/>
+            <Route path={'/signup'} element={<Signup />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -259,6 +265,22 @@ function Axi(props) {
   )
 }
 
+function LoginAction(props) {
+  return (
+    <div>
+      <h1>로그인</h1>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/login');
+      }}>로그인</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/signup');
+      }}>회원가입</a>
+    </div>
+  )
+}
+
 function Main() {
 
   const movePage = useNavigate();
@@ -293,6 +315,9 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('axios');
         }}>Axios</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('login');
+        }}>Login</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
@@ -300,7 +325,7 @@ function Main() {
       {화면 === 'application' && <Application onPage={propMove}/>}
       {화면 === 'effect' && <Effect onPage={propMove}/>}
       {화면 === 'axios' && <Axi onPage={propMove}/>}
-      
+      {화면 === 'login' && <LoginAction onPage={propMove}/>}
     </div>
   )
 }
