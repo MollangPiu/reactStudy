@@ -21,6 +21,7 @@ import Stat3 from './sta/Sta3'
 import Stat4 from './sta/Sta4'
 import Stat5 from './sta/Sta5'
 import Stat6 from './sta/Sta6'
+import Stat7 from './sta/Sta7'
 import Redu1 from './sta/Reduce1'
 import Redu2 from './sta/Reduce2'
 
@@ -68,6 +69,7 @@ class App extends Component {
             <Route path={'/sta4'} element={<Stat4 />} />
             <Route path={'/sta5'} element={<Stat5 />} />
             <Route path={'/sta6'} element={<Stat6 />} />
+            <Route path={'/sta7'} element={<Stat7 />} />
 
             <Route path={'/Redu1'} element={<Redu1 />} />
             <Route path={'/Redu2'} element={<Redu2 />} />
@@ -174,6 +176,12 @@ function State(props) {
         props.onPage('./sta6');
       }}>List 활용하기</a><br/>
 
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./sta7');
+      }}>State Effect</a><br/>
+
+      <h2>Reduce</h2>
       <a className='mainDiv' onClick={e => {
         e.preventDefault();
         props.onPage('./redu1');
