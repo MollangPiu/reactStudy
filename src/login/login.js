@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { login } from './axios';
 
 function Login() {
     const [id, setId] = useState('');
@@ -34,12 +35,10 @@ function Login() {
     const onLogin = () => {
         setId('');
         setPassword('');
-    };
 
-    /** 회원가입 기능 */
-    const onSignup = () => {
-        setId('');
-        setPassword('');
+        login({userId: id, userPw: password}).then(res => {
+            console.log(res);
+        });
     };
 
     return (

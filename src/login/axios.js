@@ -28,4 +28,8 @@ export const regist = (obj) => {
     return api.post('/member/regist', JSON.stringify(obj));
 }
 
+export const login = (obj) => {
+    return api.post('/member/login', JSON.stringify(obj));
+}
+
 export default api;
