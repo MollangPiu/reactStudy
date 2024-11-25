@@ -2,13 +2,15 @@ import {Component, useState} from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
+import Variable from './def/variable'
 import Json1 from './def/Json1'
 import Json2 from './def/Json2' 
 import Json3 from './def/Json3' 
 import Img1 from './def/img1'
 import Checkbox from './def/checkbox'
 import Checkbox2 from './def/checkbox2'
-
+import Radio from './def/Radio'
+import SelectBox from './def/SelectBox'
 
 import Evt1 from './evt/Evt1'
 
@@ -69,9 +71,11 @@ class App extends Component {
             <Route path={'/json2'} element={<Json2 />}></Route>
             <Route path={'/json3'} element={<Json3 />}></Route>
             <Route path={'/img1'} element={<Img1 />} />
+            <Route path={'/variable'} element={<Variable />} />
+            <Route path={'/radio'} element={<Radio />} />
+            <Route path={'/selectbox'} element={<SelectBox />} />
             <Route path={'/checkbox'} element={<Checkbox />} />
             <Route path={'/checkbox2'} element={<Checkbox2 />} />
-
 
             <Route path={"/"} element={<Main />} ></Route>
             <Route path={"/first"} element={<First />} />
@@ -123,6 +127,10 @@ function Deafult(props) {
       <h1>기본</h1>
       <a className='mainDiv' onClick={e => {
         e.preventDefault();
+        props.onPage('/variable');
+      }}>변수</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
         props.onPage('./img1');
       }}>이미지 불러오기</a><br/>
 
@@ -132,6 +140,16 @@ function Deafult(props) {
       }} >이벤트 처리하기</a><br/>
 
       <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/radio');
+      }} >라디오</a><br/>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/selectbox');
+      }} >selectbox</a><br/>
+
+      
+    <a className='mainDiv' onClick={function(e) {
         e.preventDefault();
         props.onPage('/checkbox');
       }} >체크박스</a><br/>
