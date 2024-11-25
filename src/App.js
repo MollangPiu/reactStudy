@@ -6,7 +6,7 @@ import Json1 from './def/Json1'
 import Json2 from './def/Json2' 
 import Json3 from './def/Json3' 
 import Img1 from './def/img1'
-
+import Checkbox from './def/checkbox'
 import Evt1 from './evt/Evt1'
 
 import First from './comp/Comp1'
@@ -41,6 +41,7 @@ import Signup from './login/Signup'
 import Ctx1 from './contextAp/Main'
 
 import Memo01 from './memo/Memo01'
+import Memo02 from './memo/Memo02'
 
 class App extends Component {
   constructor(props) {
@@ -63,6 +64,9 @@ class App extends Component {
             <Route path={'/json2'} element={<Json2 />}></Route>
             <Route path={'/json3'} element={<Json3 />}></Route>
             <Route path={'/img1'} element={<Img1 />} />
+            <Route path={'/checkbox'} element={<Checkbox />} />
+
+
 
             <Route path={"/"} element={<Main />} ></Route>
             <Route path={"/first"} element={<First />} />
@@ -97,6 +101,8 @@ class App extends Component {
             <Route path={'/ctx1'} element={<Ctx1 />} />
 
             <Route path={'/memo1'} element={<Memo01 />} />
+            <Route path={'/memo2'} element={<Memo02 />} />
+
           </Routes>
         </BrowserRouter>
       </div>
@@ -119,6 +125,11 @@ function Deafult(props) {
         e.preventDefault();
         props.onPage('/evt1');
       }} >이벤트 처리하기</a><br/>
+
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/checkbox');
+      }} >체크박스</a><br/>
     </div>
   )
 }
@@ -307,7 +318,11 @@ function Action(props) {
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
         props.onPage('/memo1');
-      }}>Memo 사용하기</a>
+      }}>Memo 사용하기</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/memo2');
+      }}>Memo 사용하기 2</a>
     </div>
   )
 }
