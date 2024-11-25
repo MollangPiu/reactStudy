@@ -7,6 +7,9 @@ import Json2 from './def/Json2'
 import Json3 from './def/Json3' 
 import Img1 from './def/img1'
 import Checkbox from './def/checkbox'
+import Checkbox2 from './def/checkbox2'
+
+
 import Evt1 from './evt/Evt1'
 
 import First from './comp/Comp1'
@@ -65,7 +68,7 @@ class App extends Component {
             <Route path={'/json3'} element={<Json3 />}></Route>
             <Route path={'/img1'} element={<Img1 />} />
             <Route path={'/checkbox'} element={<Checkbox />} />
-
+            <Route path={'/checkbox2'} element={<Checkbox2 />} />
 
 
             <Route path={"/"} element={<Main />} ></Route>
@@ -130,6 +133,10 @@ function Deafult(props) {
         e.preventDefault();
         props.onPage('/checkbox');
       }} >체크박스</a><br/>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/checkbox2');
+      }} >체크박스2</a><br/>
     </div>
   )
 }
