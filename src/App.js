@@ -28,6 +28,8 @@ import Stat7 from './sta/Sta7'
 import Redu1 from './sta/Reduce1'
 import Redu2 from './sta/Reduce2'
 
+import Fil from './sta/Fil'
+
 import Ref1 from './sta/Ref1'
 
 import Eft1 from './eft/Eft1'
@@ -86,7 +88,7 @@ class App extends Component {
             <Route path={'/sta6'} element={<Stat6 />} />
             <Route path={'/sta7'} element={<Stat7 />} />
             <Route path={'/ref1'} element={<Ref1 />} />
-
+            <Route path={'/filter'} element={<Fil />} />
 
             <Route path={'/Redu1'} element={<Redu1 />} />
             <Route path={'/Redu2'} element={<Redu2 />} />
@@ -214,6 +216,12 @@ function State(props) {
         e.preventDefault();
         props.onPage('./sta7');
       }}>State Effect</a><br/>
+
+      <h2>Filter</h2>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./filter');
+      }}>Filter 사용하기</a><br/>
 
       <h2>Reduce</h2>
       <a className='mainDiv' onClick={e => {

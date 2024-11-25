@@ -15,7 +15,7 @@ function Ref1() {
             <h1>Ref1</h1>
             <input type="text" ref={inputRef} />
             <button onClick={() => {
-                inputRef.current.focus();
+                inputRef.current .focus();
                 inputRef.current.value = 'Hello World';
             }}>Input 수정</button>
 
