@@ -38,6 +38,9 @@ import Ax3 from './ax/ax03'
 import Login from './login/login'
 import Signup from './login/Signup'
 
+import Ctx1 from './contextAp/Main'
+
+import Memo01 from './memo/Memo01'
 
 class App extends Component {
   constructor(props) {
@@ -91,6 +94,9 @@ class App extends Component {
 
             <Route path={'/login'} element={<Login/>}/>
             <Route path={'/signup'} element={<Signup />} />
+            <Route path={'/ctx1'} element={<Ctx1 />} />
+
+            <Route path={'/memo1'} element={<Memo01 />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -290,6 +296,22 @@ function LoginAction(props) {
   )
 }
 
+function Action(props) {
+  return (
+    <div>
+      <h1>Context</h1>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/ctx1');
+      }}>Context 사용하기</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/memo1');
+      }}>Memo 사용하기</a>
+    </div>
+  )
+}
+
 function Main() {
 
   const movePage = useNavigate();
@@ -327,6 +349,9 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('login');
         }}>Login</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('context');
+        }}>기능</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
@@ -335,6 +360,7 @@ function Main() {
       {화면 === 'effect' && <Effect onPage={propMove}/>}
       {화면 === 'axios' && <Axi onPage={propMove}/>}
       {화면 === 'login' && <LoginAction onPage={propMove}/>}
+      {화면 === 'context' && <Action onPage={propMove} />}
     </div>
   )
 }
