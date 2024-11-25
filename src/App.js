@@ -50,6 +50,8 @@ import Ctx1 from './contextAp/Main'
 import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
 
+import Call01 from './memo/Call01'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -111,7 +113,7 @@ class App extends Component {
 
             <Route path={'/memo1'} element={<Memo01 />} />
             <Route path={'/memo2'} element={<Memo02 />} />
-
+            <Route path={'/call01'} element={<Call01 />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -355,7 +357,11 @@ function Action(props) {
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
         props.onPage('/memo2');
-      }}>Memo 사용하기 2</a>
+      }}>Memo 사용하기 2</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/call01');
+      }}>useCallBack</a>
     </div>
   )
 }
