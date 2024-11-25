@@ -20,11 +20,11 @@ export default function Filter() {
 
     function styleColor(category) {
         if(category === '한식') {
-            return 'blue';
+            return '#1F509A';
         } else if(category === '양식') {
-            return 'green';
+            return '#9ABF80';
         } else if(category === '중식') {
-            return 'red';
+            return '#E38E49';
         } else {
             return 'white';
         }
