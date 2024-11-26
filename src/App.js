@@ -27,8 +27,11 @@ import Stat4 from './sta/Sta4'
 import Stat5 from './sta/Sta5'
 import Stat6 from './sta/Sta6'
 import Stat7 from './sta/Sta7'
+import Stat8 from './sta/Sta8'
 import Redu1 from './sta/Reduce1'
 import Redu2 from './sta/Reduce2'
+import Reduce3 from './sta/Reduce3'
+import Reduce4 from './sta/Reduce4'
 
 import Fil from './sta/Fil'
 
@@ -51,6 +54,7 @@ import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
 
 import Call01 from './memo/Call01'
+import Call02 from './memo/Call02'
 
 class App extends Component {
   constructor(props) {
@@ -93,12 +97,14 @@ class App extends Component {
             <Route path={'/sta5'} element={<Stat5 />} />
             <Route path={'/sta6'} element={<Stat6 />} />
             <Route path={'/sta7'} element={<Stat7 />} />
+            <Route path={'/sta8'} element={<Stat8 />} />
             <Route path={'/ref1'} element={<Ref1 />} />
             <Route path={'/filter'} element={<Fil />} />
 
             <Route path={'/Redu1'} element={<Redu1 />} />
             <Route path={'/Redu2'} element={<Redu2 />} />
-
+            <Route path={'/Redu3'} element={<Reduce3 />} />
+            <Route path={'/Redu4'} element={<Reduce4 />} />
             <Route path={'/eft1'} element={<Eft1 />} />
             <Route path={'/eft2'} element={<Eft2 />} />
             <Route path={'/eft3'} element={<Eft3 />} />
@@ -114,6 +120,7 @@ class App extends Component {
             <Route path={'/memo1'} element={<Memo01 />} />
             <Route path={'/memo2'} element={<Memo02 />} />
             <Route path={'/call01'} element={<Call01 />} />
+            <Route path={'/call02'} element={<Call02 />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -236,6 +243,10 @@ function State(props) {
         e.preventDefault();
         props.onPage('./sta7');
       }}>State Effect</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./sta8');
+      }}>다크모드</a><br/>
 
       <h2>Filter</h2>
       <a className='mainDiv' onClick={e => {
@@ -253,6 +264,16 @@ function State(props) {
         e.preventDefault();
         props.onPage('./redu2');
       }}>Reducer 사용하기 obj</a><br/>
+
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./redu3');
+      }}>Reducer 사용하기 3</a><br/>
+
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./redu4');
+      }}>Reducer 사용하기 4</a><br/>
 
       <a className='mainDiv' onClick={e => {
         e.preventDefault();
@@ -361,7 +382,11 @@ function Action(props) {
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
         props.onPage('/call01');
-      }}>useCallBack</a>
+      }}>useCallBack</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/call02');
+      }}>useCallBack 2</a>
     </div>
   )
 }

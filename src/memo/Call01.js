@@ -1,20 +1,26 @@
-import { useCallback, useEffect, useState } from "react";
+import {useCallback, useEffect, useState } from "react";
 
 function Call01() {
     console.log('call01');
 
     const [count, setCount] = useState(0);
 
-  
-    const someCount = useCallback(() => {
-        console.log(`someCount: ${count}`);
-    }, [count]);
 
-    
+
+
 
     useEffect(() => {
-        console.log(`effect: ${count}`);
+        console.log(`somecount 변경`);
     }, [someCount]);
+
+
+
+      
+    const someCount = useCallback(() => {
+        console.log(`someCount: ${count}`);
+        //setTest(test+1);
+    }, [count]);
+
 
 
     return (
@@ -23,7 +29,6 @@ function Call01() {
             <input type="button" value="증가" onClick={()=>setCount(count+1)} /><br/>
             state: {count}<br/>
             <input type='button' value='someCount' onClick={someCount} />
-            <span>some: {someCount()}</span>
         </div>
     )
 }
