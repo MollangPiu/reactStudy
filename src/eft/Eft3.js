@@ -6,6 +6,8 @@ export default function Example() {
   // 컴포넌트가 렌더링될 때마다 특정 작업을 수행합니다.
   useEffect(() => {
     document.title = `You clicked ${count} times`;
+    const inp = document.getElementById('inp');
+    inp.value = count;
   });
 
   return (
@@ -14,6 +16,7 @@ export default function Example() {
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
+      <input type='text' id='inp'/>
     </div>
   );
 }

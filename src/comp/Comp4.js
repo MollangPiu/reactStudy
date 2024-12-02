@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 
 function Study() {
@@ -20,6 +20,12 @@ function Study() {
 
 function Second(props) {
     console.log(props);
+
+    
+    useEffect(()=> {
+        console.log('useEffect');
+    }, [props.st]);
+
     return (
         <div style={{border: "3px solid red"}}>
             <span>{props.st}</span>

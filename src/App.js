@@ -11,6 +11,7 @@ import Checkbox from './def/checkbox'
 import Checkbox2 from './def/checkbox2'
 import Radio from './def/Radio'
 import SelectBox from './def/SelectBox'
+import UseId1 from './def/UseId1'
 
 import Evt1 from './evt/Evt1'
 
@@ -40,6 +41,7 @@ import Ref1 from './sta/Ref1'
 import Eft1 from './eft/Eft1'
 import Eft2 from './eft/Eft2'
 import Eft3 from './eft/Eft3'
+import Eff4 from './eft/Eft4'
 
 import Ax1 from './ax/ax01'
 import Ax2 from './ax/ax02'
@@ -52,6 +54,7 @@ import Ctx1 from './contextAp/Main'
 
 import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
+import Memo03 from './memo/Memo03'
 
 import Call01 from './memo/Call01'
 import Call02 from './memo/Call02'
@@ -82,6 +85,9 @@ class App extends Component {
             <Route path={'/selectbox'} element={<SelectBox />} />
             <Route path={'/checkbox'} element={<Checkbox />} />
             <Route path={'/checkbox2'} element={<Checkbox2 />} />
+            <Route path={'/useid1'} element={<UseId1 />} />
+
+
 
             <Route path={"/"} element={<Main />} ></Route>
             <Route path={"/first"} element={<First />} />
@@ -108,7 +114,7 @@ class App extends Component {
             <Route path={'/eft1'} element={<Eft1 />} />
             <Route path={'/eft2'} element={<Eft2 />} />
             <Route path={'/eft3'} element={<Eft3 />} />
-
+            <Route path={'/eft4'} element={<Eff4 />} />
             <Route path={'/ax1'} element={<Ax1/>}/>
             <Route path={'/ax2'} element={<Ax2/>}/>
             <Route path={'/ax3'} element={<Ax3/>}/>
@@ -119,6 +125,7 @@ class App extends Component {
 
             <Route path={'/memo1'} element={<Memo01 />} />
             <Route path={'/memo2'} element={<Memo02 />} />
+            <Route path={'/memo3'} element={<Memo03 />} />
             <Route path={'/call01'} element={<Call01 />} />
             <Route path={'/call02'} element={<Call02 />} />
           </Routes>
@@ -166,6 +173,11 @@ function Deafult(props) {
         e.preventDefault();
         props.onPage('/checkbox2');
       }} >체크박스2</a><br/>
+
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/useid1');
+      }} >useId</a><br/>
     </div>
   )
 }
@@ -322,6 +334,10 @@ function Effect(props) {
         e.preventDefault();
         props.onPage('/eft3');
       }}>Effect 사용하기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/eft4');
+      }}>Effect 사용하기 4</a><br/>
     </div>
   )
 }
@@ -379,6 +395,11 @@ function Action(props) {
         e.preventDefault();
         props.onPage('/memo2');
       }}>Memo 사용하기 2</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/memo3');
+      }}>Memo 사용하기 3</a><br/>
+
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
         props.onPage('/call01');

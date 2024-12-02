@@ -9,9 +9,9 @@ function Call01() {
 
 
 
-    useEffect(() => {
-        console.log(`somecount 변경`);
-    }, [someCount]);
+    // useEffect(() => {
+    //     console.log(`somecount 변경`); 
+    // }, [someCount]);
 
 
 
