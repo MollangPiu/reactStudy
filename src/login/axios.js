@@ -48,4 +48,8 @@ export const boardUpdate = (obj) => {
     return api.post('/board/modify', JSON.stringify(obj));
 }
 
+export const boardDelete = (id) => {
+    return api.post('/board/remove', JSON.stringify({boardId: id}));
+}
+
 export default api;

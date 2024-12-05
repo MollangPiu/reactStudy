@@ -30,7 +30,7 @@ export default function BoardEdit() {
         obj.content = detail.content;
         obj.memberId = detail.memberId;
         boardUpdate(obj).then(res => {
-            navigate(`/detail/${id}`);
+            navigate(`/boardDetail/${id}`);
         });
     };
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { boardDetail } from './axios';
+import { boardDetail, boardDelete } from './axios';
 import './BoardDetail.css';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -23,6 +23,14 @@ export default function BoardDetail() {
         navigate(`/boardEdit/${id}`);
     };
 
+    const handleDelete = () => {
+        if (window.confirm("정말 삭제하시겠습니까?")) {
+            boardDelete(id).then(() => {
+                navigate('/boardList');
+            });
+        }
+    };
+
     return (
         <div className="board-detail-container">
             <h1 className="board-detail-title">게시판 상세</h1>
@@ -35,6 +43,7 @@ export default function BoardDetail() {
                 <span className="like-count">추천 수: {likes}</span>
             </div>
             <button onClick={handleEdit} className="edit-button">수정</button>
+            <button onClick={handleDelete} className="delete-button">삭제</button>
         </div>
     )
 }
