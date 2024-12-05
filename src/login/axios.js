@@ -44,4 +44,8 @@ export const boardLike = (id) => {
     return api.post('/board/good', JSON.stringify({boardId: id}));
 }
 
+export const boardUpdate = (obj) => {
+    return api.post('/board/modify', JSON.stringify(obj));
+}
+
 export default api;

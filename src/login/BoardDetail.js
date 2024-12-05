@@ -1,24 +1,26 @@
 import { useEffect, useState } from 'react';
-import { boardDetail, boardLike } from './axios';
+import { boardDetail } from './axios';
 import './BoardDetail.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function BoardDetail() {
     const [detail, setDetail] = useState({});
     const [likes, setLikes] = useState(0);
-
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         boardDetail(id).then(res => {
             setDetail(res.data.data);
-            setLikes(res.data.data.boardGood);
         });
-    }, []);
+    }, [id]);
 
     const handleLike = () => {
-        boardLike(id);
         setLikes(likes + 1);
+    };
+
+    const handleEdit = () => {
+        navigate(`/boardEdit/${id}`);
     };
 
     return (
@@ -32,6 +34,7 @@ export default function BoardDetail() {
                 <button onClick={handleLike} className="like-button">추천</button>
                 <span className="like-count">추천 수: {likes}</span>
             </div>
+            <button onClick={handleEdit} className="edit-button">수정</button>
         </div>
     )
 }
