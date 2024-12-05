@@ -32,4 +32,8 @@ export const login = (obj) => {
     return api.post('/member/login', JSON.stringify(obj));
 }
 
+export const boardList = () => {
+    return api.get('/board/list');
+}
+
 export default api;

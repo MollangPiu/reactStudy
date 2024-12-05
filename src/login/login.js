@@ -33,12 +33,20 @@ function Login() {
 
     /** 로그인 기능 */
     const onLogin = () => {
+
+
+        console.log('data');
+        console.log(id, password);
+        login({userId: id, userPw: password}).then(res => {
+            if(res.data.code === '200' && res.data.data === 'Y') {
+                alert('로그인 성공');
+                localStorage.setItem('userId', id);
+                window.location.href = '/boardList';
+            }
+        });
+
         setId('');
         setPassword('');
-
-        login({userId: id, userPw: password}).then(res => {
-            console.log(res);
-        });
     };
 
     return (
