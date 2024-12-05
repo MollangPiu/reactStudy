@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { boardList } from './axios';
 import './BoardList.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function BoardList() {
 
     const [list, setList] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(()=> {
         boardList().then(res => {
@@ -29,7 +32,11 @@ export default function BoardList() {
                 </thead>
                 <tbody>
                     {list.slice(0, 10).map((item, index) => {
-                        return <tr key={index}>
+                        return <tr key={index}
+                            onClick={() => {
+                                navigate(`/boardDetail/${item.boardIdx}`);
+                            }}
+                        >
                             <td>{index+1}</td>
                             <td>{item.title}</td>
                             <td>{item.memberId}</td>

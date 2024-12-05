@@ -36,4 +36,8 @@ export const boardList = () => {
     return api.get('/board/list');
 }
 
+export const boardDetail = (id) => {
+    return api.get('/board/find', {params: {boardId: id}});
+}
+
 export default api;
