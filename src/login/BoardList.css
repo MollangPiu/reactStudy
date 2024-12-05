@@ -1,17 +1,29 @@
 /* Style for the container */
-* {
+body {
     margin: 0;
     padding: 0;
 }
 
 .board-list-container {
-    padding: 20px;
     font-family: Arial, sans-serif;
-    background-image: url('./assets/boardImg.webp');
+    
+}
+
+.board-list-area {
+    background-image: url('./assets/boardImg1.webp');
     background-size: cover;
     background-position: center;
     height: 100vh;
 }
+
+.board-detail-area {
+    background-image: url('./assets/boardImg2.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
 
 /* Style for the table */
 .board-list-table {
