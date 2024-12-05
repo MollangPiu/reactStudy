@@ -40,4 +40,8 @@ export const boardDetail = (id) => {
     return api.get('/board/find', {params: {boardId: id}});
 }
 
+export const boardLike = (id) => {
+    return api.post('/board/good', JSON.stringify({boardId: id}));
+}
+
 export default api;

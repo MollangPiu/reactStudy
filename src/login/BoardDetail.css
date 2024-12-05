@@ -1,0 +1,35 @@
+.board-detail-container {
+    padding: 30px;
+    max-width: 700px;
+    margin: 40px auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.board-detail-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.board-detail-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.board-detail-info {
+    color: #34495e;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.board-detail-info span {
+    font-weight: bold;
+    color: #2980b9;
+}
