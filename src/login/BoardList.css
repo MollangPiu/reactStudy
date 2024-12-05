@@ -1,7 +1,16 @@
 /* Style for the container */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .board-list-container {
     padding: 20px;
     font-family: Arial, sans-serif;
+    background-image: url('./assets/boardImg.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
 /* Style for the table */
