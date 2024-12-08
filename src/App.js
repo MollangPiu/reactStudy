@@ -54,6 +54,7 @@ import BoardWrite from './login/BoardWrite'
 import BoardDetail from './login/BoardDetail'
 import BoardEdit from './login/BoardEdit'
 import Ctx1 from './contextAp/Main'
+import Test01 from './login/Test01'
 
 import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
@@ -129,6 +130,7 @@ class App extends Component {
             <Route path={'/boardDetail/:id'} element={<BoardDetail />} />
             <Route path={'/boardEdit/:id'} element={<BoardEdit />} />
             <Route path={'/ctx1'} element={<Ctx1 />} />
+            <Route path={'/test01'} element={<Test01 />} />
 
             <Route path={'/memo1'} element={<Memo01 />} />
             <Route path={'/memo2'} element={<Memo02 />} />
@@ -394,7 +396,10 @@ function LoginAction(props) {
         e.preventDefault();
         props.onPage('/boardDetail');
       }}>게시판 상세</a><br/>
-      
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/test01');
+      }}>test01</a><br/>
     </div>
   )
 }

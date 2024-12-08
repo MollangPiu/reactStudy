@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 export default function BoardList() {
 
+
     const [list, setList] = useState([]);
     const [keyword, setKeyword] = useState('');
     const [searchType, setSearchType] = useState('title');
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const navigate = useNavigate();
 
@@ -26,21 +28,37 @@ export default function BoardList() {
             }
         });
     }
+
+
+
+
     useEffect(()=> {
+
+
         boardList().then(res => {
             console.log(res);
             if(res.data.code === '200') {
                 setList(res.data.data);
             }
         });
+
     }, []);
 
     useEffect(() => {
         search();
     }, [searchType, keyword]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % list.length);
+        }, 3000); // Change image every 3 seconds
+        return () => clearInterval(interval);
+    }, [list]);
+
     return (
+        
         <div className="board-list-container">
+
             <div className="board-list-area">
                 <h1 className="board-list-header">게시판리스트</h1>
                 
@@ -75,8 +93,22 @@ export default function BoardList() {
                     </tbody>
                 </table>
             </div>
+
+            <div className="boardCard-area">
+                <span>제목 영역</span>
+            </div>
             <div className="board-detail-area">
                 
+            </div>
+            <div className="slideshow">
+                {list.map((item, index) => (
+                    <img
+                        key={index}
+                        src={item.imageUrl} // Assuming each item has an imageUrl property
+                        className={index === currentImageIndex ? 'fade-in' : 'fade-out'}
+                        alt={item.title}
+                    />
+                ))}
             </div>
         </div>
     )
