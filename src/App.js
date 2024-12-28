@@ -55,6 +55,7 @@ import BoardDetail from './login/BoardDetail'
 import BoardEdit from './login/BoardEdit'
 import Ctx1 from './contextAp/Main'
 import Test01 from './login/Test01'
+import MinWow from './login/minwow'
 
 import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
@@ -131,6 +132,7 @@ class App extends Component {
             <Route path={'/boardEdit/:id'} element={<BoardEdit />} />
             <Route path={'/ctx1'} element={<Ctx1 />} />
             <Route path={'/test01'} element={<Test01 />} />
+            <Route path={'/minwow'} element={<MinWow />} />
 
             <Route path={'/memo1'} element={<Memo01 />} />
             <Route path={'/memo2'} element={<Memo02 />} />
@@ -432,7 +434,11 @@ function Action(props) {
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
         props.onPage('/call02');
-      }}>useCallBack 2</a>
+      }}>useCallBack 2</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/minwow');
+      }}>햄식이 회원가입</a><br/>
     </div>
   )
 }

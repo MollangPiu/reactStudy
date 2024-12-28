@@ -4,6 +4,7 @@ import animal2 from './assets/img/animal2.jpeg';
 import animal3 from './assets/img/img1.webp';
 import animal4 from './assets/img/img2.webp';
 import backImg from './assets/img/backImg.jpeg';
+import './boardCSS.css';
 
 export default function BoardList() {
   return (
@@ -117,6 +118,10 @@ function Slideshow() {
             }}
           />
         </div>
+      </div>
+
+      <div className='boardListArea'>
+
       </div>
     </div>
   );

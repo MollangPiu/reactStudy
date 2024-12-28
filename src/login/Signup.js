@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Signup.css'; // Import the CSS file
+// import './Signup.css'; // Import the CSS file
 import { findId, areaAll, regist } from './axios'
 
 function Signup() {
