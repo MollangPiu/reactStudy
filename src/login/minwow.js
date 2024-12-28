@@ -223,7 +223,7 @@ function MinWow() {
 
       {/* 버퍼 영역 */}
       <div className={buffer ? 'buffer-outSide' : '' }>
-        <div className="buffer-inSide"></div>
+        <div className={buffer ? 'buffer-inSide': ''}></div>
       </div>
     </>
   );
