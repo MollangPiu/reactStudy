@@ -116,7 +116,7 @@ function MinWow() {
                       <label htmlFor="id" className={`${idCheck ? 'warning': ''}`} >ID 입력</label>
                       <div className="btn-idCheck" onClick={btnIdCheck}>
                         <div className="sunFlowerImg">&nbsp;</div>
-                        <span className={idUnqiueCheck ? 'font-color-green' : ''}>중복 확인</span>
+                        <span className={idUnqiueCheck ? 'font-color-green' : 'font-color-red'}>중복 확인</span>
                       </div>
                       <div className={idUnqiueCheck ? 'seedImg' : ''}
                       style={{display: idUnqiueCheck ? 'block' : 'none'}}

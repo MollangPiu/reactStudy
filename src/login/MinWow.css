@@ -4,6 +4,11 @@
     box-sizing: 0;
 }
 
+@font-face {
+    font-family: 'jua';
+    src: url('./assets/font/Jua-Regular.ttf');
+}
+
 .buffer-outSide {
     display: flex;
     justify-content: center;
@@ -18,7 +23,7 @@
 
 .buffer-inSide {
     z-index: 1000;
-    background-image: url('./assets/img/buffer.gif');
+    background-image: url('./assets/img2/buffer.gif');
     background-size: 100% 100%;
     width: 300px;
     height: 200px;
@@ -28,7 +33,12 @@
     color: green;
 }
 
+.font-color-red {
+    color: red;
+}
+
 .join-container {
+    font-family: 'jua';
     width: 100vw;
     height: 100vh;
 
@@ -51,7 +61,7 @@
 
 .join-container .join_area .img_ham {
     width: 40%;
-    background-image: url('./assets/img/joinImg.jpg');
+    background-image: url('./assets/img2/joinImg.jpg');
     background-size: 100% 100%;
 }
 .join-container .join_area .joinForm-container {
@@ -78,7 +88,7 @@
     position: absolute;
     top: 15px;
     right: -50px;
-    background-image: url('./assets/img/seed.png');    
+    background-image: url('./assets/img2/seed.png');    
     background-size: 100% 100%;
     width: 20px;
     height: 20px;
@@ -141,13 +151,17 @@
     cursor: pointer;
 }
 
+.joinForm-container .btn-idCheck span {
+    position: absolute;
+    top: 7px;
+}
 .joinForm-container .btn-idCheck:hover {
     color:green
 }
 
 .joinForm-container .btn-idCheck .sunFlowerImg {
     margin-right: 10px;
-    background-image: url('./assets/img/sunflowerSeed.png');
+    background-image: url('./assets/img2/sunflowerSeed.png');
     height: 100%;
     width: 14px;
     background-size: 100% 100%;
@@ -206,7 +220,7 @@
     height: 100%;
     top: -10px;
     margin-right: 15px;
-    background-image: url('./assets/img/cheese.png');
+    background-image: url('./assets/img2/cheese.png');
     display: inline-block;
     background-size: 100% 100%;
     cursor: pointer;
@@ -228,7 +242,7 @@
     width: 24px;
     margin-right: 15px;
     display: inline-block;
-    background-image: url('./assets/img/u-turn.png');
+    background-image: url('./assets/img2/u-turn.png');
     background-size: 100% 100%;
     cursor: pointer;
 }
