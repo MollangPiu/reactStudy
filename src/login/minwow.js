@@ -174,6 +174,20 @@ function MinWow() {
                       <label htmlFor="NickName" className={`${nickNameCheck ? 'warning': ''}`}>NickName 입력</label>
                     </div>
 
+                    <div className="ham-area">
+                      <fieldset>
+                        <label>
+                          <input type="radio" name="contact" value="email" checked />
+                          <span>이메일</span>
+                        </label>
+
+                        <label>
+                          <input type="radio" name="contact" value="phone" />
+                          <span>전화</span>
+                        </label>
+                      </fieldset>
+                    </div>
+
                     {/* 생년월일 */}
                     <span className="spanYear">생년 월일</span>
                     <div
