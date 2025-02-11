@@ -12,8 +12,10 @@ function Study() {
             <input type="button" value="버튼" onClick={e => {
                 setSta(sta+1);
                 document.getElementById('inp').value = 'test';
+                
                  }}></input>
             <input type='text' id='inp'/>
+
         </div>
     )
 }

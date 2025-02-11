@@ -37,6 +37,7 @@ import Reduce4 from './sta/Reduce4'
 import Fil from './sta/Fil'
 
 import Ref1 from './sta/Ref1'
+import Ref2 from './sta/Ref2'
 
 import Eft1 from './eft/Eft1'
 import Eft2 from './eft/Eft2'
@@ -110,6 +111,7 @@ class App extends Component {
             <Route path={'/sta7'} element={<Stat7 />} />
             <Route path={'/sta8'} element={<Stat8 />} />
             <Route path={'/ref1'} element={<Ref1 />} />
+            <Route path={'/ref2'} element={<Ref2 />} />
             <Route path={'/filter'} element={<Fil />} />
 
             <Route path={'/Redu1'} element={<Redu1 />} />
@@ -302,6 +304,10 @@ function State(props) {
         e.preventDefault();
         props.onPage('./ref1');
       }}>Ref 사용하기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./ref2');
+      }}>Ref 사용하기 2</a><br/>
     </div>
   )
 

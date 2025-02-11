@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select 박스</title>
+</head>
+<body>
+    <select onChange="test1(event)">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+    </select>
+
+    <div id="dd"></div>
+
+    <script>
+        function test1(e) {
+            console.log(e);
+            alert(e.target.value);
+        }
+    </script>
+</body>
+</html>

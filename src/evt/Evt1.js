@@ -13,6 +13,7 @@ function Study() {
             <input type="button" value="show Name" onClick={e=> {
                 console.log(텍스트);
             }}></input>
+            {텍스트}
         </div>
     )
 }
