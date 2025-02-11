@@ -99,7 +99,9 @@
     margin-top: 0;
 }
 
-.join-container .join_area .joinForm-container .joinForm .ham-area input {
+.join-container .join_area .joinForm-container .joinForm .ham-area input[type="text"],
+.join-container .join_area .joinForm-container .joinForm .ham-area input[type="password"]
+ {
     width: 100%;
     padding: 20px 10px 10px;
     background-color: transparent;
@@ -111,7 +113,7 @@
     cursor: pointer;
 }
 
-.join-container .join_area .joinForm-container .joinForm .ham-area label {
+.join-container .join_area .joinForm-container .joinForm .ham-area label.subTitle {
     position: absolute;
     left: 50px;
     top: 15px;
@@ -120,8 +122,8 @@
     transition: all .5s ease;
 }
 
-.join-container .join_area .joinForm-container .joinForm .ham-area input:focus + label,
-.join-container .join_area .joinForm-container .joinForm .ham-area input:valid + label {
+.join-container .join_area .joinForm-container .joinForm .ham-area input:focus + label.subTitle,
+.join-container .join_area .joinForm-container .joinForm .ham-area input:valid + label.subTitle {
     top: -2px;
     left: 10px;
     font-size: 13px;
@@ -247,7 +249,7 @@
     cursor: pointer;
 }
 
-.ham-area label {
+.ham-area .gender-label {
     font-size: 18px;
     line-height: 2rem;
     padding: 0.2em 0.4em;
@@ -302,7 +304,7 @@
     justify-content: center;
     border: none;
     margin: 0;
-    padding: 40px 20px;
+    padding: 10px 20px;
   }
   
   *,
