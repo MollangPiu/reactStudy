@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import './MinWow.css'
+import { use } from "react";
 
 function MinWow() {
 
@@ -19,6 +20,16 @@ function MinWow() {
     const nameRef = useRef(null);         //NAME 입력 참조
     const nickNameRef = useRef(null);     //NickName 입력 참조
     const birthRef = useRef(null);        //생년월일 입력 참조
+
+    const [idValue, setIdValue] = useState('abcd');
+    const [pwValue, setPwValue] = useState(null);
+    const [nameValue, setNameValue] = useState(null);
+    const [nickNameValue, setNickNameValue] = useState(null);
+    const [gender, setGender] = useState('male');
+    const [birthY, setBirthY] = useState('1999');
+    const [birthM, setBirthM] = useState('01');
+    const [birthD, setBirthD] = useState('01');
+    const [submitAction, setSubmitAction] = useState(true);
 
     //Id 유효성 검사
     const joinSubmit = () => {
@@ -75,7 +86,9 @@ function MinWow() {
         setBuffer(true);
         setTimeout(() => {
             setBuffer(false);
+            setSubmitAction(true);
         }, 1000);
+
     }
 
     //유효성 검사 CSS Warning 효과 삭제하기
@@ -111,9 +124,9 @@ function MinWow() {
                   <div className="joinForm">
                     {/* ID 입력 */}
                     <div className={`ham-area`}>
-                      <input type="text" name="id" id="id" ref={idRef} autoComplete="off" required />
+                      <input type="text" name="id" id="id" ref={idRef} autoComplete="off" required onChange={e=>setIdValue(e.target.value)}/>
                       {/* React에서는 htmlFor 속성을 사용해야 합니다. */}
-                      <label htmlFor="id" className={`${idCheck ? 'warning': ''}`} >ID 입력</label>
+                      <label htmlFor="id" className={`${idCheck ? 'warning': ''} subTitle` } >ID 입력</label>
                       <div className="btn-idCheck" onClick={btnIdCheck}>
                         <div className="sunFlowerImg">&nbsp;</div>
                         <span className={idUnqiueCheck ? 'font-color-green' : 'font-color-red'}>중복 확인</span>
@@ -131,9 +144,10 @@ function MinWow() {
                         id="pw1"
                         autoComplete="off"
                         ref={pwRef}
+                        onChange={e=>setPwValue(e.target.value)}
                         required
                       />
-                      <label htmlFor="pw1" className={`${pwCheck ? 'warning': ''}`}>PASSWORD 입력</label>
+                      <label htmlFor="pw1" className={`${pwCheck ? 'warning': ''} subTitle`}>PASSWORD 입력</label>
                     </div>
 
                     {/* PASSWORD 입력(재입력 또는 다른 용도?) */}
@@ -146,7 +160,7 @@ function MinWow() {
                         ref={pw2Ref}
                         required
                       />
-                      <label htmlFor="pw2" className={`${pw2Check ? 'warning': ''}`}>PASSWORD 확인</label>
+                      <label htmlFor="pw2" className={`${pw2Check ? 'warning': ''} subTitle`}>PASSWORD 확인</label>
                     </div>
 
                     {/* NAME 입력 */}
@@ -157,8 +171,9 @@ function MinWow() {
                       id="name"
                       ref={nameRef}
                       autoComplete="off"
+                      onChange={e=>setNameValue(e.target.value)}
                       required />
-                      <label htmlFor="name" className={`${nameCheck ? 'warning': ''}`}>NAME 입력</label>
+                      <label htmlFor="name" className={`${nameCheck ? 'warning': ''} subTitle`}>NAME 입력</label>
                     </div>
 
                     {/* NickName 입력 */}
@@ -169,9 +184,26 @@ function MinWow() {
                         id="NickName"
                         ref={nickNameRef}
                         autoComplete="off"
+                        onChange={e=>setNickNameValue(e.target.value)}
                         required
                       />
-                      <label htmlFor="NickName" className={`${nickNameCheck ? 'warning': ''}`}>NickName 입력</label>
+                      <label htmlFor="NickName" className={`${nickNameCheck ? 'warning': ''} subTitle`}>NickName 입력</label>
+                    </div>
+
+                    <div className="ham-area">
+                      <fieldset>
+                        <label className="gender-label">
+                          <input type="radio" name="gender" value="male" checked
+                          onChange={e=> setGender(e.target.value)}/>
+                          <span>남자</span>
+                        </label>
+
+                        <label className="gender-label">
+                          <input type="radio" name="gender" value="female"
+                          onChange={e=> setGender(e.target.value)} />
+                          <span>여자</span>
+                        </label>
+                      </fieldset>
                     </div>
 
                     {/* 생년월일 */}
@@ -180,21 +212,24 @@ function MinWow() {
                       className="ham-area"
                       style={{ width: "100%", marginTop: "5px" }}
                     >
-                      <select className="sel" ref={birthRef}>
+                      <select className="sel" ref={birthRef}
+                      onChange={e=>setBirthY(e.target.value)}>
                         <option>1999</option>
                         <option>1998</option>
                         <option>1997</option>
                       </select>
                       <span>년</span>
 
-                      <select ref={birthRef}>
+                      <select ref={birthRef}
+                      onChange={e=>setBirthM(e.target.value)}>
                         <option>01</option>
                         <option>02</option>
                         <option>03</option>
                       </select>
                       <span>월</span>
 
-                      <select ref={birthRef}>
+                      <select ref={birthRef}
+                      onChange={e=>setBirthD(e.target.value)}>
                         <option>01</option>
                         <option>02</option>
                         <option>03</option>
@@ -224,6 +259,120 @@ function MinWow() {
       {/* 버퍼 영역 */}
       <div className={buffer ? 'buffer-outSide' : '' }>
         <div className={buffer ? 'buffer-inSide': ''}></div>
+      </div>
+
+      <div style={{display: submitAction ? 'block' : 'none',
+        width: '100vw',
+        height: '110vh',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        position: 'absolute',
+        top: '0px',
+        left: '0px'
+      }}>
+        <div style={{
+          width: '600px',
+          height: '270px',
+          backgroundColor: 'white',
+          borderRadius: '15px',
+          position: 'absolute',
+          top: '30%',
+          left: '40%',
+          paddingTop: '10px',
+          paddingRight: '10px',
+          paddingLeft: '60px'
+        }}>
+          <div style={{
+            position: 'absolute',
+            right: '10px',
+            padding: '10px',
+            backgroundColor: '#E52020',
+            borderRadius: '15px',
+            fontSize: '15px',
+            fontWeight: 'bold',
+            cursor: 'pointer'
+          }}
+            onClick={() => setSubmitAction(false)}
+          >
+            닫기
+          </div>
+            <span style={{
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: 'green',
+              marginRight: '10px'
+            }}>ID</span>:
+            <span style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginLeft: '10px'
+            }}>{idValue}</span><br/>
+            <span style={{
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: 'green',
+              marginRight: '10px'
+            }}>PW</span>:
+            <span style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginLeft: '10px'
+            }}>{pwValue}</span><br/>
+            <span style={{
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: 'green',
+              marginRight: '10px'
+            }}>NAME</span>:
+            <span style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginLeft: '10px'
+            }}>{nameValue}</span><br/>
+            <span style={{
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: 'green',
+              marginRight: '10px'
+            }}>NICKNAME</span>:
+            <span style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginLeft: '10px'
+            }}>{nickNameValue}</span><br/>
+            <span style={{
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: 'green',
+              marginRight: '10px'
+            }}>GENDER</span>:
+            <span style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginLeft: '10px'
+            }}>{gender === 'male'? '남자': '여자'}</span><br/>
+            <span style={{
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: 'green',
+              marginRight: '10px'
+            }}>Birth</span>:
+            <span style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginLeft: '10px'
+            }}>{birthY}
+            <span style={{
+              fontSize: '15px',
+              fontWeight: 'bold'
+            }}>년</span> {birthM}<span style={{
+              fontSize: '15px',
+              fontWeight: 'bold'
+            }}>월</span> {birthD}<span style={{
+              fontSize: '15px',
+              fontWeight: 'bold'
+            }}>일</span> </span><br/>
+        </div>
+
       </div>
     </>
   );
