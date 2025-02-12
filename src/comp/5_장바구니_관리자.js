@@ -42,9 +42,19 @@ function Study() {
 function Admin({data}) {
     return (
         <div>
-            <h1>관리자 화면</h1>
+            <h1>관리자 화면면</h1>
+            <span style={{
+                fontSize: '20px',
+                fontWeight: 'bold',
+            }}>주문금액 합계: </span>
+            <span
+            style={{
+                fontSize: '45px',
+                fontWeight: 'bold',
+                color: 0 === 0? 'black': 'blue',
+            }}>0</span><br/>
 
-            <h3>주문 내용</h3>
+            <h3>주문 내용용</h3>
             {data.map(item => (
                 <div>
                     {item.title}

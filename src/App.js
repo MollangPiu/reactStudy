@@ -23,6 +23,7 @@ import Comp4 from './comp/2_props부모에게전달'
 import Comp5 from './comp/3_장바구니_기본'
 import Comp6 from './comp/4_장바구니_합계'
 import Comp7 from './comp/5_장바구니_관리자'
+import Comp8 from './comp/6_장바구니_관리자_응용'
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
@@ -106,6 +107,7 @@ class App extends Component {
             <Route path={"/comp5"} element={<Comp5/>} />
             <Route path={"/comp6"} element={<Comp6/>} />
             <Route path={"/comp7"} element={<Comp7/>} />
+            <Route path={"/comp8"} element={<Comp8/>} />
 
             <Route path={"/sta1"} element={<Stat1 />} />
             <Route path={'/sta2'} element={<Stat2 />} />
@@ -436,7 +438,11 @@ function Comp(props) {
       <a className='mainDiv' onClick={e => {
         e.preventDefault();
         props.onPage('./comp7');
-      }}>장바구니_관리자자</a><br/>
+      }}>장바구니_관리자</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp8');
+      }}>장바구니_관리자_응용</a><br/>
     </div>
   )
 }
