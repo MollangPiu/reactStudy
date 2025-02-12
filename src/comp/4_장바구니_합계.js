@@ -10,13 +10,34 @@ function Study() {
         ]
     )
 
+    const [합계, set합계] = useState(0);
+
     return (
-        <div>
+        <div
+            style={{marginTop: '30px'}}
+        >
+            <span style={{
+                fontSize: '20px',
+                fontWeight: 'bold',
+            }}>주문금액 합계: </span>
+            <span
+            style={{
+                fontSize: '45px',
+                fontWeight: 'bold',
+                color: 합계 === 0? 'black': 'blue',
+            }}>{합계}</span>
             <Main data={장바구니} onStatus={ val=> {
                 console.log(val);
                 변경장바구니(val);
+                }
             }
-            }/>
+            
+            handlerOrder={
+                val => {
+                    set합계(합계+val);
+                }
+            }
+            />
         </div>
     )
 }
@@ -38,6 +59,22 @@ function Main(props) {
                         <span>{element.price}</span>
                     </div>
                     <div>
+                        <input
+                            style={{
+                                margin: '5px',
+                                padding: '5px',
+                                fontSize: '15px',
+                                fontWeight: 'bold',
+                                backgroundColor: '#B3D8A8',
+                                cursor: 'pointer'
+                            }}
+                            type="button"
+                            value="구입하기"
+                            onClick={e=> {
+                                //console.log(element.price);
+                                props.handlerOrder(element.price);
+                            }}
+                            />
                         <span style={{cursor: 'pointer'}} onClick={
                             e=> {
                                 let chgList = [...props.data];

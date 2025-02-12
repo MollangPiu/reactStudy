@@ -16,10 +16,13 @@ import UseId1 from './def/UseId1'
 import Evt1 from './evt/Evt1'
 
 import First from './comp/Comp1'
-import Study from './comp/Comp2'
-import Study2 from './comp/Comp3'
-import Comp4 from './comp/Comp4'
-import Comp5 from './comp/Comp5'
+import Comp2 from './comp/0_Component기초'
+import Comp3 from './comp/1_props사용하기'
+import Comp4 from './comp/2_props부모에게전달'
+
+import Comp5 from './comp/3_장바구니_기본'
+import Comp6 from './comp/4_장바구니_합계'
+import Comp7 from './comp/5_장바구니_관리자'
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
@@ -97,10 +100,12 @@ class App extends Component {
 
             <Route path={"/"} element={<Main />} ></Route>
             <Route path={"/first"} element={<First />} />
-            <Route path={"/study1"} element={<Study />} />
-            <Route path={"/study2"} element={<Study2 />} />
+            <Route path={"/comp2"} element={<Comp2 />} />
+            <Route path={"/comp3"} element={<Comp3 />} />
             <Route path={"/comp4"} element={<Comp4/>} />
             <Route path={"/comp5"} element={<Comp5/>} />
+            <Route path={"/comp6"} element={<Comp6/>} />
+            <Route path={"/comp7"} element={<Comp7/>} />
 
             <Route path={"/sta1"} element={<Stat1 />} />
             <Route path={'/sta2'} element={<Stat2 />} />
@@ -204,15 +209,9 @@ function MainAction(props) {
         e.preventDefault();
         props.onPage('/first');
       }}>구구단</a><br/>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        props.onPage('/study1');
-      }}>study</a><br/>
+      
 
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        props.onPage('/study2');
-      }}>props obj 넘기기</a><br/>
+
 
       <a className='mainDiv' onClick={function(e) {
         e.preventDefault();
@@ -220,14 +219,11 @@ function MainAction(props) {
       }}>props list 넘기기</a><br/>
 
 
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp4');
-      }}>state와 comp 넘기기</a><br/>
+
       <a className='mainDiv' onClick={e => {
         e.preventDefault();
         props.onPage('./comp5');
-      }}>장바구니 - com + state</a>
+      }}>장바구치_추천</a>
 
     </div>
   )
@@ -412,6 +408,39 @@ function LoginAction(props) {
   )
 }
 
+/** Comp 기능 구현하기 */
+function Comp(props) {
+  return (
+    <div>
+    <h1>Comp 활용하기</h1>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/comp2');
+      }}>0_Component 기초</a><br/>
+      <a className='mainDiv' onClick={function(e) {
+        e.preventDefault();
+        props.onPage('/comp3');
+      }}>1_props사용하기기</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp4');
+      }}>2_부모에게 전달</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp5');
+      }}>장바구니_기본</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp6');
+      }}>장바구니_합계</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp7');
+      }}>장바구니_관리자자</a><br/>
+    </div>
+  )
+}
+
 function Action(props) {
   return (
     <div>
@@ -489,6 +518,9 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('context');
         }}>기능</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('comp');
+        }}>Comp 기능</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
@@ -498,6 +530,7 @@ function Main() {
       {화면 === 'axios' && <Axi onPage={propMove}/>}
       {화면 === 'login' && <LoginAction onPage={propMove}/>}
       {화면 === 'context' && <Action onPage={propMove} />}
+      {화면 === 'comp' && <Comp onPage={propMove} />}
     </div>
   )
 }

@@ -9,6 +9,7 @@ function Study() {
 
     return (
         <div style={{border:"3px solid blue"}}>
+            <h1>부모 Component</h1>
             <Second  st={va} onEveChk={ val=> {
                 console.log(val);
                 setVal(val);
@@ -28,6 +29,7 @@ function Second(props) {
 
     return (
         <div style={{border: "3px solid red"}}>
+            <h1>자식 Component</h1>
             <span>{props.st}</span>
             <input type="type=" id="inp"></input>
             <input type='button' value="state 변경" onClick={e=> {
