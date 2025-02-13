@@ -28,13 +28,16 @@ import Comp8 from './comp/장바구니/6_장바구니_관리자_응용'
 import Comp9 from './comp/계산기'
 import Comp10 from './comp/계산기_함수'
 import Comp11 from './comp/다크모드'
-<<<<<<< HEAD
-=======
+
 import Comp12 from './comp/화면전환'
 import Comp13 from './comp/학생성적/0_학생성적_기본'
 import Comp14 from './comp/학생성적/1_학생성적_compont분리'
 import Comp15 from './comp/학생성적/2_학생성적_입력'
->>>>>>> 827c692ea1efd897fde24eb6060a269d9a89fb5e
+
+import Comp16 from './comp/영역/1_div나누기'
+import Comp17 from './comp/영역/2_div나누기'
+import Comp18 from './comp/영역/3_div나누기'
+
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
@@ -126,7 +129,9 @@ class App extends Component {
             <Route path={"/comp13"} element={<Comp13/>} />
             <Route path={"/comp14"} element={<Comp14/>} />
             <Route path={"/comp15"} element={<Comp15/>} />
-            
+            <Route path={"/comp16"} element={<Comp16/>} />
+            <Route path={"/comp17"} element={<Comp17/>} />
+            <Route path={"/comp18"} element={<Comp18/>} />
 
             <Route path={"/sta1"} element={<Stat1 />} />
             <Route path={'/sta2'} element={<Stat2 />} />
@@ -446,6 +451,19 @@ function Comp(props) {
         e.preventDefault();
         props.onPage('./comp4');
       }}>2_부모에게 전달</a><br/>
+      <h1>영역</h1>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp16');
+      }}>1_div나누기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp17');
+      }}>2_div나누기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('./comp18');
+      }}>3_div나누기</a><br/>
       <h1>활용</h1>
       <a className='mainDiv' onClick={(e) => {
         e.preventDefault();

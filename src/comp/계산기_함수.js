@@ -64,7 +64,9 @@ function History({data}) {
     }, [data]);
 
     return (
-        <div>
+        <div style={{
+            border: '3px solid red'
+        }}>
             <h1>History</h1>
             {리스트.map((item, index) => (
                 <div key={index}>

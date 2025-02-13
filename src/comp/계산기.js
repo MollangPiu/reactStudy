@@ -54,7 +54,9 @@ export default function Study() {
 
 function History({data}) {
     return (
-        <div>
+        <div style={{
+            border: '3px solid red'
+        }}>
             <h1>History</h1>
             {data.map((item, index) => (
                 <div key={index}>
