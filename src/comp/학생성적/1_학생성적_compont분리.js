@@ -15,18 +15,22 @@ export default function 학생성적() {
     return (
         <div>
             <h1>학생성적</h1>
-            <h3>입력</h3>
+            <div style={{
+                padding: '20px',
+            }}>
+                <h3>입력</h3>
 
-            <input type="text" placeholder="이름" ref={이름} />
-            <input type="number" placeholder="국어" ref={국어} />
-            <input type="number" placeholder="영어" ref={영어} />
-            <input type="number" placeholder="수학" ref={수학} />
-            <button onClick={() => {
-                set학생([...학생, {이름: 이름.current.value, 국어: 국어.current.value, 영어: 영어.current.value, 수학: 수학.current.value}]);
-            }}  >추가</button>
+                <input type="text" placeholder="이름" ref={이름} />
+                <input type="number" placeholder="국어" ref={국어} />
+                <input type="number" placeholder="영어" ref={영어} />
+                <input type="number" placeholder="수학" ref={수학} />
+                <button onClick={() => {
+                    set학생([...학생, {이름: 이름.current.value, 국어: 국어.current.value, 영어: 영어.current.value, 수학: 수학.current.value}]);
+                }}  >추가</button>
+            </div>
 
 
-            <h3>리스트</h3>
+            
             <학생성적_출력 학생={학생}/>
         </div>
     )
@@ -34,32 +38,40 @@ export default function 학생성적() {
 
 function 학생성적_출력({학생}) {
     return (
-        <table
-            style={{
-                width: '100%',
-                border: '1px solid #000',
-                borderCollapse: 'collapse',
-            }}
-        >
-            <thead>
-                <tr>
-                    <th>이름</th>
-                    <th>국어</th>
-                    <th>영어</th>
-                    <th>수학</th>
-                </tr>
-            </thead>
-            <tbody>
-                {학생.map((학생, index) => (
-                    <tr key={index}>
-                        <td>{학생.이름}</td>
-                        <td>{학생.국어}</td>
-                        <td>{학생.영어}</td>
-                        <td>{학생.수학}</td>
+        <div style={{
+            border: '3px solid green',
+            padding: '20px'
+        }}>
+            <h3 style={{
+                marginBottom: '10px'
+            }}>리스트</h3>
+            <table
+                style={{
+                    width: '100%',
+                    border: '2px solid black',
+                    borderCollapse: 'collapse',
+                }}
+            >
+                <thead>
+                    <tr>
+                        <th>이름</th>
+                        <th>국어</th>
+                        <th>영어</th>
+                        <th>수학</th>
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {학생.map((학생, index) => (
+                        <tr key={index}>
+                            <td>{학생.이름}</td>
+                            <td>{학생.국어}</td>
+                            <td>{학생.영어}</td>
+                            <td>{학생.수학}</td>
+                        </tr>
+                    ))}
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     )
 }
