@@ -4,8 +4,17 @@ import img2 from '../../assets/img/image2.png';
 export default function Study() {
     return (
         <div>
-            <h1>3_div나누기</h1>
-            <h2>아래의 빨간색 영역을 2개 이상으로 나뉘어 보세요.</h2>
+            <h1>4_div나누기</h1>
+            <h2>Component를 연속으로 사용해 보세요.</h2>
+
+            <ImageDiv/>
+            <ImageDiv/>
+        </div>
+    )
+}
+
+function ImageDiv() {
+    return (
             <div style={{
                 display: 'flex',
                 border: '3px solid red',
@@ -18,6 +27,5 @@ export default function Study() {
                     <span>작고 말랑말랑한 병아리</span>
                 </div>
             </div>
-        </div>
     )
 }
