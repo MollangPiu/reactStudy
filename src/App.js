@@ -28,6 +28,13 @@ import Comp8 from './comp/장바구니/6_장바구니_관리자_응용'
 import Comp9 from './comp/계산기'
 import Comp10 from './comp/계산기_함수'
 import Comp11 from './comp/다크모드'
+<<<<<<< HEAD
+=======
+import Comp12 from './comp/화면전환'
+import Comp13 from './comp/학생성적/0_학생성적_기본'
+import Comp14 from './comp/학생성적/1_학생성적_compont분리'
+import Comp15 from './comp/학생성적/2_학생성적_입력'
+>>>>>>> 827c692ea1efd897fde24eb6060a269d9a89fb5e
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
@@ -115,6 +122,11 @@ class App extends Component {
             <Route path={"/comp9"} element={<Comp9/>} />
             <Route path={"/comp10"} element={<Comp10/>} />
             <Route path={"/comp11"} element={<Comp11/>} />
+            <Route path={"/comp12"} element={<Comp12/>} />
+            <Route path={"/comp13"} element={<Comp13/>} />
+            <Route path={"/comp14"} element={<Comp14/>} />
+            <Route path={"/comp15"} element={<Comp15/>} />
+            
 
             <Route path={"/sta1"} element={<Stat1 />} />
             <Route path={'/sta2'} element={<Stat2 />} />
@@ -441,12 +453,30 @@ function Comp(props) {
       }}>다크모드</a><br/>
       <a className='mainDiv' onClick={(e) => {
         e.preventDefault();
+        props.onPage('./comp12');
+      }}>화면전환</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
         props.onPage('./comp9');
       }}>계산기</a><br/>
       <a className='mainDiv' onClick={(e) => {
         e.preventDefault();
         props.onPage('./comp10');
       }}>계산기_함수</a><br/>
+
+      <h1>학생 성적</h1>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp13');
+      }}>학생 성적_기본</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp14');
+      }}>학생 성적_컴포넌트 분리</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp15');
+      }}>학생 성적_입력</a><br/>
 
       <h1>장바구니</h1>
       <a className='mainDiv' onClick={e => {
