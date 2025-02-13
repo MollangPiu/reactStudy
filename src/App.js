@@ -20,15 +20,14 @@ import Comp2 from './comp/0_Component기초'
 import Comp3 from './comp/1_props사용하기'
 import Comp4 from './comp/2_props부모에게전달'
 
-import Comp5 from './comp/3_장바구니_기본'
-import Comp6 from './comp/4_장바구니_합계'
-import Comp7 from './comp/5_장바구니_관리자'
-import Comp8 from './comp/6_장바구니_관리자_응용'
+import Comp5 from './comp/장바구니/3_장바구니_기본'
+import Comp6 from './comp/장바구니/4_장바구니_합계'
+import Comp7 from './comp/장바구니/5_장바구니_관리자'
+import Comp8 from './comp/장바구니/6_장바구니_관리자_응용'
 
 import Comp9 from './comp/계산기'
 import Comp10 from './comp/계산기_함수'
 import Comp11 from './comp/다크모드'
-
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
