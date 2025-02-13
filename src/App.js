@@ -86,9 +86,14 @@ import Memo03 from './memo/Memo03'
 import Call01 from './memo/Call01'
 import Call02 from './memo/Call02'
 
+/*** localStorage 함수 */
+import Local1 from './localStorage함수/local사용하기';
+
+
 
 /*** App.js 함수 */
-import Comp from './App함수/컴포넌트'
+import Comp from './App함수/컴포넌트';
+import LocalStorage from './App함수/localStorage함수';
 
 class App extends Component {
   constructor(props) {
@@ -182,6 +187,8 @@ class App extends Component {
             <Route path={'/memo3'} element={<Memo03 />} />
             <Route path={'/call01'} element={<Call01 />} />
             <Route path={'/call02'} element={<Call02 />} />
+
+            <Route path={'/local1'} element={<Local1 />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -477,6 +484,7 @@ function Action(props) {
   )
 }
 
+/*** Main 화면 */
 function Main() {
 
   const movePage = useNavigate();
@@ -520,6 +528,9 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('comp');
         }}>Comp 기능</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('localStorage');
+        }}>localStorage</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
@@ -530,6 +541,7 @@ function Main() {
       {화면 === 'login' && <LoginAction onPage={propMove}/>}
       {화면 === 'context' && <Action onPage={propMove} />}
       {화면 === 'comp' && <Comp onPage={propMove} />}
+      {화면 === 'localStorage' && <LocalStorage onPage={propMove} />}
     </div>
   )
 }
