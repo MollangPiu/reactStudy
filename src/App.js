@@ -16,9 +16,9 @@ import UseId1 from './def/UseId1'
 import Evt1 from './evt/Evt1'
 
 import First from './comp/Comp1'
-import Comp2 from './comp/0_Component기초'
-import Comp3 from './comp/1_props사용하기'
-import Comp4 from './comp/2_props부모에게전달'
+import Comp2 from './comp/comp기초/0_Component기초'
+import Comp3 from './comp/comp기초/1_props사용하기'
+import Comp4 from './comp/comp기초/2_props부모에게전달'
 
 import Comp5 from './comp/장바구니/3_장바구니_기본'
 import Comp6 from './comp/장바구니/4_장바구니_합계'
@@ -85,6 +85,10 @@ import Memo03 from './memo/Memo03'
 
 import Call01 from './memo/Call01'
 import Call02 from './memo/Call02'
+
+
+/*** App.js 함수 */
+import Comp from './App함수/컴포넌트'
 
 class App extends Component {
   constructor(props) {
@@ -432,106 +436,6 @@ function LoginAction(props) {
         e.preventDefault();
         props.onPage('/test01');
       }}>test01</a><br/>
-    </div>
-  )
-}
-
-/** Comp 기능 구현하기 */
-function Comp(props) {
-  return (
-    <div>
-    <h1>Comp 활용하기</h1>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        props.onPage('/comp2');
-      }}>0_Component 기초</a><br/>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        props.onPage('/comp3');
-      }}>1_props사용하기기</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp4');
-      }}>2_부모에게 전달</a><br/>
-      <h1>영역</h1>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp16');
-      }}>1_div나누기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp17');
-      }}>2_div나누기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp18');
-      }}>3_div나누기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp19');
-      }}>4_div나누기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp20');
-      }}>5_div나누기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp21');
-      }}>6_div나누기</a><br/>
-      <h1>활용</h1>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp11');
-      }}>다크모드</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp12');
-      }}>화면전환</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp9');
-      }}>계산기</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp10');
-      }}>계산기_함수</a><br/>
-
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp22');
-      }}>회원관리_지역</a><br/>
-
-      <h1>학생 성적</h1>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp13');
-      }}>학생 성적_기본</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp14');
-      }}>학생 성적_컴포넌트 분리</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./comp15');
-      }}>학생 성적_입력</a><br/>
-
-      <h1>장바구니</h1>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp5');
-      }}>장바구니_기본</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp6');
-      }}>장바구니_합계</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp7');
-      }}>장바구니_관리자</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./comp8');
-      }}>장바구니_관리자_응용</a><br/>
     </div>
   )
 }
