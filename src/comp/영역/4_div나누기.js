@@ -20,7 +20,12 @@ function ImageDiv() {
                 border: '3px solid red',
             }}>
                 <div>
-                    <img src={img1} alt="img1" />
+                    <img src={img1} alt="img1" style={{width: '200px',
+                        height: '200px',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                        border: '1px solid black',
+                    }} />
                 </div>
                 <div>
                     <h1>귀여운 병아리</h1>

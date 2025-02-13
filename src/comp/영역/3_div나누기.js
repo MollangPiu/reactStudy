@@ -5,7 +5,7 @@ export default function Study() {
     return (
         <div>
             <h1>3_div나누기</h1>
-            <h2>아래의 빨간색 영역을 2개 이상으로 나뉘어 보세요.</h2>
+            <h2>아래의 빨간색 영역을 Component로 나누어 보세요.</h2>
             <div style={{
                 display: 'flex',
                 border: '3px solid red',

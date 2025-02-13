@@ -20,7 +20,12 @@ function ImageDiv(props) {
                 border: '3px solid red',
             }}>
                 <div>
-                    <img src={props.img} alt="img1" />
+                    <img src={props.img} alt="img1" style={{width: '200px',
+                        height: '200px',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                        border: '1px solid black',
+                    }} />
                 </div>
                 <div>
                     <h1>{props.title}</h1>
