@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import Variable from './def/variable'
 import Json1 from './def/Json1'
 import Json2 from './def/Json2' 
-import Json3 from './def/Json3' 
+
 import Img1 from './def/img1'
 import Checkbox from './def/checkbox'
 import Checkbox2 from './def/checkbox2'
@@ -40,6 +40,7 @@ import Comp18 from './comp/영역/3_div나누기'
 import Comp19 from './comp/영역/4_div나누기'
 import Comp20 from './comp/영역/5_div나누기'
 import Comp21 from './comp/영역/6_div나누기'
+import Comp22 from './comp/회원관리_지역/회원관리_지역' 
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
@@ -104,7 +105,6 @@ class App extends Component {
             <Route path={'/evt1'} element={<Evt1/>} />
             <Route path={'/json1'} element={<Json1 />}></Route>
             <Route path={'/json2'} element={<Json2 />}></Route>
-            <Route path={'/json3'} element={<Json3 />}></Route>
             <Route path={'/img1'} element={<Img1 />} />
             <Route path={'/variable'} element={<Variable />} />
             <Route path={'/radio'} element={<Radio />} />
@@ -137,6 +137,7 @@ class App extends Component {
             <Route path={"/comp19"} element={<Comp19/>} />
             <Route path={"/comp20"} element={<Comp20/>} />
             <Route path={"/comp21"} element={<Comp21/>} />
+            <Route path={"/comp22"} element={<Comp22/>} />
 
             <Route path={"/sta1"} element={<Stat1 />} />
             <Route path={'/sta2'} element={<Stat2 />} />
@@ -353,10 +354,6 @@ function Application(props) {
         e.preventDefault();
         props.onPage('/json2')
       }}>JSON 불러오기 필터처리하기</a><br/>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        props.onPage('/json3');
-      }}>JSON 필터링 COMPONENT</a><br/>
     </div>
   )
 }
@@ -498,6 +495,11 @@ function Comp(props) {
         e.preventDefault();
         props.onPage('./comp10');
       }}>계산기_함수</a><br/>
+
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp22');
+      }}>회원관리_지역</a><br/>
 
       <h1>학생 성적</h1>
       <a className='mainDiv' onClick={(e) => {
