@@ -29,7 +29,7 @@ function MinWow() {
     const [birthY, setBirthY] = useState('1999');
     const [birthM, setBirthM] = useState('01');
     const [birthD, setBirthD] = useState('01');
-    const [submitAction, setSubmitAction] = useState(true);
+    const [submitAction, setSubmitAction] = useState(false);
 
     //Id 유효성 검사
     const joinSubmit = () => {
