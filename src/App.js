@@ -30,6 +30,8 @@ import Comp10 from './comp/계산기_함수'
 import Comp11 from './comp/다크모드'
 import Comp12 from './comp/화면전환'
 import Comp13 from './comp/학생성적/0_학생성적_기본'
+import Comp14 from './comp/학생성적/1_학생성적_compont분리'
+import Comp15 from './comp/학생성적/2_학생성적_입력'
 
 import Stat1 from './sta/Sta1'
 import Stat2 from './sta/Sta2'
@@ -119,7 +121,9 @@ class App extends Component {
             <Route path={"/comp11"} element={<Comp11/>} />
             <Route path={"/comp12"} element={<Comp12/>} />
             <Route path={"/comp13"} element={<Comp13/>} />
-
+            <Route path={"/comp14"} element={<Comp14/>} />
+            <Route path={"/comp15"} element={<Comp15/>} />
+            
 
             <Route path={"/sta1"} element={<Stat1 />} />
             <Route path={'/sta2'} element={<Stat2 />} />
@@ -462,6 +466,14 @@ function Comp(props) {
         e.preventDefault();
         props.onPage('./comp13');
       }}>학생 성적_기본</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp14');
+      }}>학생 성적_컴포넌트 분리</a><br/>
+      <a className='mainDiv' onClick={(e) => {
+        e.preventDefault();
+        props.onPage('./comp15');
+      }}>학생 성적_입력</a><br/>
 
       <h1>장바구니</h1>
       <a className='mainDiv' onClick={e => {

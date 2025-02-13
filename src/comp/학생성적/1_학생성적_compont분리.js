@@ -6,12 +6,12 @@ export default function 학생성적() {
         {이름: '이순신', 국어: 90, 영어: 80, 수학: 70},
         {이름: '임꺽정', 국어: 80, 영어: 70, 수학: 60},
     ]);
-
+ 
     const 이름 = useRef('');
     const 국어 = useRef(0);
     const 영어 = useRef(0);
     const 수학 = useRef(0);
- 
+
     return (
         <div>
             <h1>학생성적</h1>
@@ -27,26 +27,39 @@ export default function 학생성적() {
 
 
             <h3>리스트</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>이름</th>
-                        <th>국어</th>
-                        <th>영어</th>
-                        <th>수학</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {학생.map((학생, index) => (
-                        <tr key={index}>
-                            <td>{학생.이름}</td>
-                            <td>{학생.국어}</td>
-                            <td>{학생.영어}</td>
-                            <td>{학생.수학}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <학생성적_출력 학생={학생}/>
         </div>
+    )
+}
+
+function 학생성적_출력({학생}) {
+    return (
+        <table
+            style={{
+                width: '100%',
+                border: '1px solid #000',
+                borderCollapse: 'collapse',
+            }}
+        >
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>국어</th>
+                    <th>영어</th>
+                    <th>수학</th>
+                </tr>
+            </thead>
+            <tbody>
+                {학생.map((학생, index) => (
+                    <tr key={index}>
+                        <td>{학생.이름}</td>
+                        <td>{학생.국어}</td>
+                        <td>{학생.영어}</td>
+                        <td>{학생.수학}</td>
+                    </tr>
+                ))}
+
+            </tbody>
+        </table>
     )
 }
