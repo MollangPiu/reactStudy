@@ -1,8 +1,11 @@
 import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Save() {
 
     const [입력, set입력] = useState('');
+    const movePage = useNavigate();
+
 
     return (
         <div>
@@ -13,6 +16,7 @@ export default function Save() {
                 const Time = new Date();
                 const 현재시간 = Time.getHours() + "시 " + Time.getMinutes() + "분 " + Time.getSeconds() + "초";
                 localStorage.setItem('item', JSON.stringify({text: 입력, time: 현재시간}));
+                movePage('/local3');
             }}/>
         </div>
     )

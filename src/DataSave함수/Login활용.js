@@ -1,0 +1,16 @@
+import './Login활용.css';
+
+export default function Login() {
+    return (
+        <div className="local-login-body">
+            <div class="login">
+                <h1>Login</h1>
+                <form method="post">
+                    <input type="text" name="u" placeholder="Username" required="required" />
+                    <input type="password" name="p" placeholder="Password" required="required" />
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+                </form>
+            </div>
+        </div>
+    )
+}

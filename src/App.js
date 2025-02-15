@@ -91,6 +91,9 @@ import Local1 from './DataSave함수/localStorage/local사용하기';
 import Local2 from './DataSave함수/localStorage/local저장하기';
 import Local3 from './DataSave함수/localStorage/local출력하기';
 
+import Cookie1 from './DataSave함수/Cookie/1_Cookie사용하기';
+import LocalLogin from './DataSave함수/Login활용';
+
 
 
 /*** App.js 함수 */
@@ -193,6 +196,9 @@ class App extends Component {
             <Route path={'/local1'} element={<Local1 />} />
             <Route path={'/local2'} element={<Local2 />} />
             <Route path={'/local3'} element={<Local3 />} />
+
+            <Route path={'/cookie1'} element={<Cookie1 />} />
+            <Route path={'/localLogin'} element={<LocalLogin />} />
 
           </Routes>
         </BrowserRouter>
