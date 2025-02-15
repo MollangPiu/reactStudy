@@ -87,9 +87,9 @@ import Call01 from './memo/Call01'
 import Call02 from './memo/Call02'
 
 /*** localStorage 함수 */
-import Local1 from './localStorage함수/local/local사용하기';
-import Local2 from './localStorage함수/local/local저장하기';
-import Local3 from './localStorage함수/local/local출력하기';
+import Local1 from './localStorage함수/localStorage/local사용하기';
+import Local2 from './localStorage함수/localStorage/local저장하기';
+import Local3 from './localStorage함수/localStorage/local출력하기';
 
 
 
