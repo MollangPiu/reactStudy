@@ -6,7 +6,15 @@ export default function LocalStorage(props) {
             <a className='mainDiv' onClick={(e) => {
                 e.preventDefault();
                 props.onPage('./local1');
-            }}>localStorage사용하기</a><br/>
+            }}>local사용하기</a><br/>
+            <a className='mainDiv' onClick={(e) => {
+                e.preventDefault();
+                props.onPage('./local2');
+            }}>local저장하기</a><br/>
+            <a className='mainDiv' onClick={(e) => {
+                e.preventDefault();
+                props.onPage('./local3');
+            }}>local출력하기</a><br/>
         </div>
     )
 }

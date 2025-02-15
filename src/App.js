@@ -88,6 +88,8 @@ import Call02 from './memo/Call02'
 
 /*** localStorage 함수 */
 import Local1 from './localStorage함수/local사용하기';
+import Local2 from './localStorage함수/local저장하기';
+import Local3 from './localStorage함수/local출력하기';
 
 
 
@@ -189,6 +191,9 @@ class App extends Component {
             <Route path={'/call02'} element={<Call02 />} />
 
             <Route path={'/local1'} element={<Local1 />} />
+            <Route path={'/local2'} element={<Local2 />} />
+            <Route path={'/local3'} element={<Local3 />} />
+
           </Routes>
         </BrowserRouter>
       </div>
