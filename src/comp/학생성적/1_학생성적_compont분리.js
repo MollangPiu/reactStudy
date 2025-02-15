@@ -13,7 +13,9 @@ export default function 학생성적() {
     const 수학 = useRef(0);
 
     return (
-        <div>
+        <div style={{
+            border: '3px solid red',
+        }}>
             <h1>학생성적</h1>
             <div style={{
                 padding: '20px',
