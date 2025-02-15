@@ -95,7 +95,7 @@ import Local3 from './localStorage함수/local출력하기';
 
 /*** App.js 함수 */
 import Comp from './App함수/컴포넌트';
-import LocalStorage from './App함수/localStorage함수';
+import DataSave from './App함수/Data저장하기';
 
 class App extends Component {
   constructor(props) {
@@ -534,8 +534,8 @@ function Main() {
           변경화면('comp');
         }}>Comp 기능</div>
         <div className='btnArea' onClick={e=> {
-          변경화면('localStorage');
-        }}>localStorage</div>
+          변경화면('dataSave');
+        }}>DataSave 방법</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
@@ -546,7 +546,7 @@ function Main() {
       {화면 === 'login' && <LoginAction onPage={propMove}/>}
       {화면 === 'context' && <Action onPage={propMove} />}
       {화면 === 'comp' && <Comp onPage={propMove} />}
-      {화면 === 'localStorage' && <LocalStorage onPage={propMove} />}
+      {화면 === 'dataSave' && <DataSave onPage={propMove} />}
     </div>
   )
 }
