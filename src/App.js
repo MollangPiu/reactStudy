@@ -95,7 +95,8 @@ import Cookie1 from './DataSave함수/Cookie/1_Cookie사용하기';
 import LocalLogin from './DataSave함수/Login활용';
 import LoginResult from './DataSave함수/Login결과';
 
-import Redux1 from './DataSave함수/redux/1_Redux사용';
+import Redux1 from './DataSave함수/1_redux/1_Redux사용';
+import Redux2 from './DataSave함수/2_redux/1_Start';
 
 /*** App.js 함수 */
 import Comp from './App함수/컴포넌트';
@@ -202,6 +203,7 @@ class App extends Component {
             <Route path={'/localLogin'} element={<LocalLogin />} />
             <Route path={'/localLoginResult'} element={<LoginResult />} />
             <Route path={'/redux1'} element={<Redux1 />} />
+            <Route path={'/redux2'} element={<Redux2 />} />
 
           </Routes>
         </BrowserRouter>
