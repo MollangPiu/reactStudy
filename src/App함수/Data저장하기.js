@@ -27,6 +27,12 @@ export default function LocalStorage(props) {
                 e.preventDefault();
                 props.onPage('./localLogin');
             }}>Login 활용</a><br/>
+
+            <h1>Redux 사용하기</h1>
+            <a className='mainDiv' onClick={(e) => {
+                e.preventDefault();
+                props.onPage('./redux1');
+            }}>Redux 사용하기</a><br/>
         </div>
     )
 }
