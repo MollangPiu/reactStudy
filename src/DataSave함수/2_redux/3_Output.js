@@ -14,6 +14,11 @@ export default function Output() {
                     console.log(input);
                     set텍스트(input);
                 } }/>
+            <input type="button" value="방해하기" onClick={
+                () => {
+                    set텍스트('방해하기');
+                }
+            }/>
             <p>{텍스트}</p>
         </div>
     )
