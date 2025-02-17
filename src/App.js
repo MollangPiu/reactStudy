@@ -496,6 +496,10 @@ function Action(props) {
         e.preventDefault();
         props.onPage('/minwow');
       }}>햄식이 회원가입</a><br/>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/ctx1');
+      }}>Context 사용하기</a><br/>
     </div>
   )
 }
