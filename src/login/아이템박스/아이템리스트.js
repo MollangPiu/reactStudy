@@ -1,4 +1,4 @@
-export default function 아이템리스트({list, onHandlerGoodUp}) {
+export default function 아이템리스트({list, onHandlerGoodUp, onHandlerItemDetail}) {
     return (
         <div>
             <div style={{
@@ -13,8 +13,11 @@ export default function 아이템리스트({list, onHandlerGoodUp}) {
                         borderRadius: '2px',
                         width: '300px',
                         height: '150px',
-                        padding: '15px'
-                    }}>
+                        padding: '15px',
+                        cursor: 'pointer',
+                    }}
+                        onClick={() => onHandlerItemDetail(item.itemIdx)}
+                    >
                         <div style={{
                             fontSize: '25px',
                             fontWeight: 'bold',
@@ -30,8 +33,11 @@ export default function 아이템리스트({list, onHandlerGoodUp}) {
                             fontSize: '18px',
                             fontWeight: 'bold',
                             marginTop: '30px',
+                            zIndex: '100',
                             cursor: 'pointer',
-                        }} onClick={()=> onHandlerGoodUp(item.itemIdx)}>
+                        }} onClick={e=> {
+                            e.stopPropagation();    //상위 event 전파 방지
+                            onHandlerGoodUp(item.itemIdx)}}>
                             👍좋아요 {item.good}
                         </div>
                     </div>
