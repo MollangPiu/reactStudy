@@ -77,7 +77,9 @@ import BoardDetail from './login/BoardDetail'
 import BoardEdit from './login/BoardEdit'
 import Ctx1 from './contextAp/Main'
 import Test01 from './login/Test01'
-import MinWow from './login/minwow'
+import MinWow from './login/minwow';
+
+import 아이템박스 from './login/아이템박스';
 
 import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
@@ -188,6 +190,7 @@ class App extends Component {
             <Route path={'/ctx1'} element={<Ctx1 />} />
             <Route path={'/test01'} element={<Test01 />} />
             <Route path={'/minwow'} element={<MinWow />} />
+            <Route path={'/아이템박스'} element={<아이템박스 />} />
 
             <Route path={'/memo1'} element={<Memo01 />} />
             <Route path={'/memo2'} element={<Memo02 />} />
@@ -459,6 +462,12 @@ function LoginAction(props) {
         e.preventDefault();
         props.onPage('/test01');
       }}>test01</a><br/>
+
+      <h1>장바구니</h1>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/아이템박스');
+      }}>아이템박스</a><br/>
     </div>
   )
 }
