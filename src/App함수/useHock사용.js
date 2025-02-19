@@ -129,6 +129,19 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('/callback3');
                 }}>useEffect버그</a><br/>
+                <h2>Memo</h2>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/memo1');
+                }}>Memo 사용이유 x</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/memo2');
+                }}>메모 사용이유 o</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/memo3');
+                }}>useEffect버그</a><br/>
               </div>
             </div>
         

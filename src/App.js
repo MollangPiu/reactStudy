@@ -65,6 +65,10 @@ import CallBack1 from './useHock사용/callBack/콜백사용이유/콜백사용�
 import CallBack2 from './useHock사용/callBack/콜백사용이유/콜백사용.js';
 import CallBack3 from './useHock사용/callBack/useEffect버그/index.js';
 
+import Memo1 from './useHock사용/memo/메모사용이유/메모사용안함.js';
+import Memo2 from './useHock사용/memo/메모사용이유/메모사용.js';
+import Memo3 from './useHock사용/memo/useEffect버그/index.js';
+
 import Fil from './useHock사용/Fil'
 
 import Ref1 from './useHock사용/Ref1'
@@ -196,6 +200,9 @@ class App extends Component {
             <Route path={'/callback2'} element={<CallBack2 />} />
             <Route path={'/callback3'} element={<CallBack3 />} />
 
+            <Route path={'/memo1'} element={<Memo1 />} />
+            <Route path={'/memo2'} element={<Memo2 />} />
+            <Route path={'/memo3'} element={<Memo3 />} />
 
             <Route path={'/ax1'} element={<Ax1/>}/>
             <Route path={'/ax2'} element={<Ax2/>}/>
@@ -212,9 +219,9 @@ class App extends Component {
             <Route path={'/minwow'} element={<MinWow />} />
             <Route path={'/아이템박스'} element={<아이템박스 />} />
 
-            <Route path={'/memo1'} element={<Memo01 />} />
-            <Route path={'/memo2'} element={<Memo02 />} />
-            <Route path={'/memo3'} element={<Memo03 />} />
+            <Route path={'/memo01'} element={<Memo01 />} />
+            <Route path={'/memo02'} element={<Memo02 />} />
+            <Route path={'/memo03'} element={<Memo03 />} />
             <Route path={'/call01'} element={<Call01 />} />
             <Route path={'/call02'} element={<Call02 />} />
 
@@ -402,15 +409,15 @@ function Action(props) {
       }}>Context 사용하기</a><br/>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('/memo1');
+        props.onPage('/memo01');
       }}>Memo 사용하기</a><br/>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('/memo2');
+        props.onPage('/memo02');
       }}>Memo 사용하기 2</a><br/>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('/memo3');
+        props.onPage('/memo03');
       }}>Memo 사용하기 3</a><br/>
 
       <a className='mainDiv' onClick={e=> {
