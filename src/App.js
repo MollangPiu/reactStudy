@@ -58,18 +58,13 @@ import Reduce4 from './useHock사용/Reduce4'
 import Effect1 from './useHock사용/effect/1_마운트사용';
 import Effect2 from './useHock사용/effect/2_변경된값';
 import Effect3 from './useHock사용/effect/3_언마운트';
-import Effect4 from './useHock사용/effect/4_state변경';
+import Effect4 from './useHock사용/effect/4_state변경.js';
 import Effect5 from './useHock사용/effect/5_총액계산하기';
 
 import Fil from './useHock사용/Fil'
 
 import Ref1 from './useHock사용/Ref1'
 import Ref2 from './useHock사용/Ref2'
-
-import Eft1 from './eft/Eft1'
-import Eft2 from './eft/Eft2'
-import Eft3 from './eft/Eft3'
-import Eff4 from './eft/Eft4'
 
 import Ax1 from './ax/ax01'
 import Ax2 from './ax/ax02'
@@ -186,10 +181,6 @@ class App extends Component {
             <Route path={'/Redu2'} element={<Redu2 />} />
             <Route path={'/Redu3'} element={<Reduce3 />} />
             <Route path={'/Redu4'} element={<Reduce4 />} />
-            <Route path={'/eft1'} element={<Eft1 />} />
-            <Route path={'/eft2'} element={<Eft2 />} />
-            <Route path={'/eft3'} element={<Eft3 />} />
-            <Route path={'/eft4'} element={<Eff4 />} />
 
             <Route path={'/effect1'} element={<Effect1 />} />
             <Route path={'/effect2'} element={<Effect2 />} />
