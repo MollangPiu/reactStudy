@@ -3,10 +3,6 @@ import { useEffect, useState, useCallback } from "react";
 export default function UseEffect버그() {
     const [data, setData] = useState(0);
 
-    // const fetchData = useCallback(() => {
-    //     setData(0);
-    // }, []);
-
     const fetchData = useCallback(() => {
         setData(data+1);
     }, []);
