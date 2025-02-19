@@ -55,7 +55,9 @@ import Redu2 from './useHock사용/Reduce2'
 import Reduce3 from './useHock사용/Reduce3'
 import Reduce4 from './useHock사용/Reduce4'
 
-import Effect1 from './useHock사용/effect/1_마운트사용'
+import Effect1 from './useHock사용/effect/1_마운트사용';
+import Effect2 from './useHock사용/effect/2_변경된값';
+import Effect3 from './useHock사용/effect/3_언마운트';
 
 import Fil from './useHock사용/Fil'
 
@@ -188,6 +190,8 @@ class App extends Component {
             <Route path={'/eft4'} element={<Eff4 />} />
 
             <Route path={'/effect1'} element={<Effect1 />} />
+            <Route path={'/effect2'} element={<Effect2 />} />
+            <Route path={'/effect3'} element={<Effect3 />} />
 
 
             <Route path={'/ax1'} element={<Ax1/>}/>

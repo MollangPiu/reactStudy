@@ -71,6 +71,14 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('/effect1');
                 }}>1_마운트 사용하기</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/effect2');
+                }}>2_변경된값</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/effect3');
+                }}>3_언마운트</a><br/>
 
 
                 <h2>Reduce</h2>
