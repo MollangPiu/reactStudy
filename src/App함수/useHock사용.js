@@ -66,6 +66,13 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('/eft4');
                 }}>Effect 사용하기 4</a><br/>
+
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/effect1');
+                }}>1_마운트 사용하기</a><br/>
+
+
                 <h2>Reduce</h2>
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();
