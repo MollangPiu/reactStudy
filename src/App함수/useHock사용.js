@@ -124,9 +124,11 @@ export default function useHock사용(props) {
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();
                   props.onPage('/callback1');
-                }}>CallBack 적용 안 됨</a><br/>
-
-                
+                }}>CallBack사용이유</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/callback3');
+                }}>useEffect버그</a><br/>
               </div>
             </div>
         
