@@ -100,9 +100,16 @@ import LoginResult from './DataSave함수/Login결과';
 import Redux1 from './DataSave함수/1_redux/1_Redux사용';
 import Redux2 from './DataSave함수/2_redux/1_Start';
 
+/*** 일반코드 */
+import 마이페이지1 from './일반코드/마이페이지1';
+
+
 /*** App.js 함수 */
 import Comp from './App함수/컴포넌트';
 import DataSave from './App함수/Data저장하기';
+import Normal from './App함수/일반코드';
+
+
 
 class App extends Component {
   constructor(props) {
@@ -207,6 +214,8 @@ class App extends Component {
             <Route path={'/localLoginResult'} element={<LoginResult />} />
             <Route path={'/redux1'} element={<Redux1 />} />
             <Route path={'/redux2'} element={<Redux2 />} />
+
+            <Route path={'/normalMypage'} element={<마이페이지1 />} />
 
           </Routes>
         </BrowserRouter>
@@ -560,6 +569,9 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('dataSave');
         }}>DataSave 방법</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('normal');
+        }}>일반코드</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
@@ -571,6 +583,7 @@ function Main() {
       {화면 === 'context' && <Action onPage={propMove} />}
       {화면 === 'comp' && <Comp onPage={propMove} />}
       {화면 === 'dataSave' && <DataSave onPage={propMove} />}
+      {화면 === 'normal' && <Normal onPage={propMove} />}
     </div>
   )
 }
