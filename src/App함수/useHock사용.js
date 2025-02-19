@@ -79,7 +79,14 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('/effect3');
                 }}>3_언마운트</a><br/>
-
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/effect4');
+                }}>4_state변경</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/effect5');
+                }}>5_총액계산하기</a><br/>
 
                 <h2>Reduce</h2>
                 <a className='mainDiv' onClick={e => {
