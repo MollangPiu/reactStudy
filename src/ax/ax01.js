@@ -2,6 +2,7 @@ import axios from "axios";
 
 function Study() {
 
+    
     function api() {
         axios.get('http://localhost:8080/api/con')
         .then(res=> {
