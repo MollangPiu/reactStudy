@@ -346,6 +346,24 @@ function State(props) {
         props.onPage('./filter');
       }}>Filter 사용하기</a><br/>
 
+      <h1>Effect</h1>
+      <a className='mainDiv' onClick={e=> {
+        e.preventDefault();
+        props.onPage('/eft1');
+      }}>Effect 기본동작 ( state 전부 )</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/eft2');
+      }}>Effect 기본동작 ( sate 일부 )</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/eft3');
+      }}>Effect 사용하기</a><br/>
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/eft4');
+      }}>Effect 사용하기 4</a><br/>
+
       <h2>Reduce</h2>
       <a className='mainDiv' onClick={e => {
         e.preventDefault();
@@ -397,30 +415,7 @@ function Application(props) {
   )
 }
 
-/** Effect 기능 */
-function Effect(props) {
-  return(
-    <div>
-      <h1>Effect</h1>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        props.onPage('/eft1');
-      }}>Effect 기본동작 ( state 전부 )</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('/eft2');
-      }}>Effect 기본동작 ( sate 일부 )</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('/eft3');
-      }}>Effect 사용하기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('/eft4');
-      }}>Effect 사용하기 4</a><br/>
-    </div>
-  )
-}
+
 
 function Axi(props) {
   return (
@@ -552,9 +547,6 @@ function Main() {
           변경화면('application');
         }}>응용하기</div>
         <div className='btnArea' onClick={e=> {
-          변경화면('effect');
-        }}>Effect</div>
-        <div className='btnArea' onClick={e=> {
           변경화면('axios');
         }}>Axios</div>
         <div className='btnArea' onClick={e=> {
@@ -577,7 +569,6 @@ function Main() {
       {화면 === 'main' && <MainAction onPage={propMove}/>}
       {화면 === 'state' && <State onPage={propMove}/>}
       {화면 === 'application' && <Application onPage={propMove}/>}
-      {화면 === 'effect' && <Effect onPage={propMove}/>}
       {화면 === 'axios' && <Axi onPage={propMove}/>}
       {화면 === 'login' && <LoginAction onPage={propMove}/>}
       {화면 === 'context' && <Action onPage={propMove} />}
