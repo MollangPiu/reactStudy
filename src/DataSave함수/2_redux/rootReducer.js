@@ -5,8 +5,6 @@ const rootReducer = combineReducers({
   });
 
 function dateReducer(state = '', action) {
-    console.log('state', state);
-    console.log('action', action);
     switch(action.type) {
         case 'INSERT':
             return {

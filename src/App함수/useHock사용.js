@@ -46,6 +46,38 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('./filter');
                 }}>Filter 사용하기</a><br/>
+
+<h2>Reduce</h2>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./redu1');
+                }}>Reducer 사용하기 1</a><br/>
+
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./redu2');
+                }}>Reducer 사용하기 obj</a><br/>
+
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./redu3');
+                }}>Reducer 사용하기 3</a><br/>
+
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./redu4');
+                }}>Reducer 사용하기 4</a><br/>
+
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./ref1');
+                }}>Ref 사용하기</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./ref2');
+                }}>Ref 사용하기 2</a><br/>
+
+
               </div>
               {/* 두 번째 행 */}
               <div>
@@ -88,35 +120,13 @@ export default function useHock사용(props) {
                   props.onPage('/effect5');
                 }}>5_총액계산하기</a><br/>
 
-                <h2>Reduce</h2>
+                <h2>CallBack</h2>
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();
-                  props.onPage('./redu1');
-                }}>Reducer 사용하기 1</a><br/>
+                  props.onPage('/callback1');
+                }}>CallBack 적용 안 됨</a><br/>
 
-                <a className='mainDiv' onClick={e => {
-                  e.preventDefault();
-                  props.onPage('./redu2');
-                }}>Reducer 사용하기 obj</a><br/>
-
-                <a className='mainDiv' onClick={e => {
-                  e.preventDefault();
-                  props.onPage('./redu3');
-                }}>Reducer 사용하기 3</a><br/>
-
-                <a className='mainDiv' onClick={e => {
-                  e.preventDefault();
-                  props.onPage('./redu4');
-                }}>Reducer 사용하기 4</a><br/>
-
-                <a className='mainDiv' onClick={e => {
-                  e.preventDefault();
-                  props.onPage('./ref1');
-                }}>Ref 사용하기</a><br/>
-                <a className='mainDiv' onClick={e => {
-                  e.preventDefault();
-                  props.onPage('./ref2');
-                }}>Ref 사용하기 2</a><br/>
+                
               </div>
             </div>
         

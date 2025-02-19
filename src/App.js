@@ -61,6 +61,9 @@ import Effect3 from './useHock사용/effect/3_언마운트';
 import Effect4 from './useHock사용/effect/4_state변경.js';
 import Effect5 from './useHock사용/effect/5_총액계산하기';
 
+import CallBack1 from './useHock사용/callBack/콜백사용이유/콜백사용안함.js';
+import CallBack2 from './useHock사용/callBack/콜백사용이유/콜백사용.js';
+
 import Fil from './useHock사용/Fil'
 
 import Ref1 from './useHock사용/Ref1'
@@ -187,6 +190,9 @@ class App extends Component {
             <Route path={'/effect3'} element={<Effect3 />} />
             <Route path={'/effect4'} element={<Effect4 />} />
             <Route path={'/effect5'} element={<Effect5 />} />
+
+            <Route path={'/callback1'} element={<CallBack1 />} />
+            <Route path={'/callback2'} element={<CallBack2 />} />
 
 
             <Route path={'/ax1'} element={<Ax1/>}/>
