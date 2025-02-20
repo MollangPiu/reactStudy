@@ -42,28 +42,37 @@ import Comp20 from './comp/영역/5_div나누기'
 import Comp21 from './comp/영역/6_div나누기'
 import Comp22 from './comp/회원관리_지역/회원관리_지역' 
 
-import Stat1 from './sta/Sta1'
-import Stat2 from './sta/Sta2'
-import Stat3 from './sta/Sta3'
-import Stat4 from './sta/Sta4'
-import Stat5 from './sta/Sta5'
-import Stat6 from './sta/Sta6'
-import Stat7 from './sta/Sta7'
-import Stat8 from './sta/Sta8'
-import Redu1 from './sta/Reduce1'
-import Redu2 from './sta/Reduce2'
-import Reduce3 from './sta/Reduce3'
-import Reduce4 from './sta/Reduce4'
+import Stat1 from './useHock사용/Sta1'
+import Stat2 from './useHock사용/Sta2'
+import Stat3 from './useHock사용/Sta3'
+import Stat4 from './useHock사용/Sta4'
+import Stat5 from './useHock사용/Sta5'
+import Stat6 from './useHock사용/Sta6'
+import Stat7 from './useHock사용/Sta7'
+import Stat8 from './useHock사용/Sta8'
+import Redu1 from './useHock사용/Reduce1'
+import Redu2 from './useHock사용/Reduce2'
+import Reduce3 from './useHock사용/Reduce3'
+import Reduce4 from './useHock사용/Reduce4'
 
-import Fil from './sta/Fil'
+import Effect1 from './useHock사용/effect/1_마운트사용';
+import Effect2 from './useHock사용/effect/2_변경된값';
+import Effect3 from './useHock사용/effect/3_언마운트';
+import Effect4 from './useHock사용/effect/4_state변경.js';
+import Effect5 from './useHock사용/effect/5_총액계산하기';
 
-import Ref1 from './sta/Ref1'
-import Ref2 from './sta/Ref2'
+import CallBack1 from './useHock사용/callBack/콜백사용이유/콜백사용안함.js';
+import CallBack2 from './useHock사용/callBack/콜백사용이유/콜백사용.js';
+import CallBack3 from './useHock사용/callBack/useEffect버그/index.js';
 
-import Eft1 from './eft/Eft1'
-import Eft2 from './eft/Eft2'
-import Eft3 from './eft/Eft3'
-import Eff4 from './eft/Eft4'
+import Memo1 from './useHock사용/memo/메모사용이유/메모사용안함.js';
+import Memo2 from './useHock사용/memo/메모사용이유/메모사용.js';
+import Memo3 from './useHock사용/memo/useEffect버그/index.js';
+
+import Fil from './useHock사용/Fil'
+
+import Ref1 from './useHock사용/Ref1'
+import Ref2 from './useHock사용/Ref2'
 
 import Ax1 from './ax/ax01'
 import Ax2 from './ax/ax02'
@@ -100,9 +109,16 @@ import LoginResult from './DataSave함수/Login결과';
 import Redux1 from './DataSave함수/1_redux/1_Redux사용';
 import Redux2 from './DataSave함수/2_redux/1_Start';
 
+/*** 일반코드 */
+import 마이페이지1 from './일반코드/마이페이지1';
+
+
 /*** App.js 함수 */
 import Comp from './App함수/컴포넌트';
 import DataSave from './App함수/Data저장하기';
+import Normal from './App함수/일반코드';
+import UseHock사용 from './App함수/useHock사용';
+
 
 class App extends Component {
   constructor(props) {
@@ -173,10 +189,21 @@ class App extends Component {
             <Route path={'/Redu2'} element={<Redu2 />} />
             <Route path={'/Redu3'} element={<Reduce3 />} />
             <Route path={'/Redu4'} element={<Reduce4 />} />
-            <Route path={'/eft1'} element={<Eft1 />} />
-            <Route path={'/eft2'} element={<Eft2 />} />
-            <Route path={'/eft3'} element={<Eft3 />} />
-            <Route path={'/eft4'} element={<Eff4 />} />
+
+            <Route path={'/effect1'} element={<Effect1 />} />
+            <Route path={'/effect2'} element={<Effect2 />} />
+            <Route path={'/effect3'} element={<Effect3 />} />
+            <Route path={'/effect4'} element={<Effect4 />} />
+            <Route path={'/effect5'} element={<Effect5 />} />
+
+            <Route path={'/callback1'} element={<CallBack1 />} />
+            <Route path={'/callback2'} element={<CallBack2 />} />
+            <Route path={'/callback3'} element={<CallBack3 />} />
+
+            <Route path={'/memo1'} element={<Memo1 />} />
+            <Route path={'/memo2'} element={<Memo2 />} />
+            <Route path={'/memo3'} element={<Memo3 />} />
+
             <Route path={'/ax1'} element={<Ax1/>}/>
             <Route path={'/ax2'} element={<Ax2/>}/>
             <Route path={'/ax3'} element={<Ax3/>}/>
@@ -192,9 +219,9 @@ class App extends Component {
             <Route path={'/minwow'} element={<MinWow />} />
             <Route path={'/아이템박스'} element={<아이템박스 />} />
 
-            <Route path={'/memo1'} element={<Memo01 />} />
-            <Route path={'/memo2'} element={<Memo02 />} />
-            <Route path={'/memo3'} element={<Memo03 />} />
+            <Route path={'/memo01'} element={<Memo01 />} />
+            <Route path={'/memo02'} element={<Memo02 />} />
+            <Route path={'/memo03'} element={<Memo03 />} />
             <Route path={'/call01'} element={<Call01 />} />
             <Route path={'/call02'} element={<Call02 />} />
 
@@ -207,6 +234,8 @@ class App extends Component {
             <Route path={'/localLoginResult'} element={<LoginResult />} />
             <Route path={'/redux1'} element={<Redux1 />} />
             <Route path={'/redux2'} element={<Redux2 />} />
+
+            <Route path={'/normalMypage'} element={<마이페이지1 />} />
 
           </Routes>
         </BrowserRouter>
@@ -291,85 +320,6 @@ function MainAction(props) {
   )
 }
 
-function State(props) {
-  return (
-    <div>
-    <h1>State 사용하기</h1>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        props.onPage('./sta1');
-      }}>state 사용하기</a><br/>
-      <a className='mainDiv' onClick={function(e) {
-        e.preventDefault();
-        props.onPage('./sta2');
-
-      }}>event State값 바꾸기</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./sta3');
-      }}>계산기 만들기</a><br/>
-      <a className='mainDiv' onClick={(e) => {
-        e.preventDefault();
-        props.onPage('./sta4');
-      }}
-      >구구단 만들기</a><br/>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        props.onPage('./sta5');
-      }}>state Obj 활용</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./sta6');
-      }}>List 활용하기</a><br/>
-
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./sta7');
-      }}>State Effect</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./sta8');
-      }}>다크모드</a><br/>
-
-      <h2>Filter</h2>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./filter');
-      }}>Filter 사용하기</a><br/>
-
-      <h2>Reduce</h2>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./redu1');
-      }}>Reducer 사용하기 1</a><br/>
-
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./redu2');
-      }}>Reducer 사용하기 obj</a><br/>
-
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./redu3');
-      }}>Reducer 사용하기 3</a><br/>
-
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./redu4');
-      }}>Reducer 사용하기 4</a><br/>
-
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./ref1');
-      }}>Ref 사용하기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('./ref2');
-      }}>Ref 사용하기 2</a><br/>
-    </div>
-  )
-
-}
 
 /** 응용하기 */
 function Application(props) {
@@ -388,30 +338,7 @@ function Application(props) {
   )
 }
 
-/** Effect 기능 */
-function Effect(props) {
-  return(
-    <div>
-      <h1>Effect</h1>
-      <a className='mainDiv' onClick={e=> {
-        e.preventDefault();
-        props.onPage('/eft1');
-      }}>Effect 기본동작 ( state 전부 )</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('/eft2');
-      }}>Effect 기본동작 ( sate 일부 )</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('/eft3');
-      }}>Effect 사용하기</a><br/>
-      <a className='mainDiv' onClick={e => {
-        e.preventDefault();
-        props.onPage('/eft4');
-      }}>Effect 사용하기 4</a><br/>
-    </div>
-  )
-}
+
 
 function Axi(props) {
   return (
@@ -482,15 +409,15 @@ function Action(props) {
       }}>Context 사용하기</a><br/>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('/memo1');
+        props.onPage('/memo01');
       }}>Memo 사용하기</a><br/>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('/memo2');
+        props.onPage('/memo02');
       }}>Memo 사용하기 2</a><br/>
       <a className='mainDiv' onClick={e=> {
         e.preventDefault();
-        props.onPage('/memo3');
+        props.onPage('/memo03');
       }}>Memo 사용하기 3</a><br/>
 
       <a className='mainDiv' onClick={e=> {
@@ -537,14 +464,11 @@ function Main() {
           변경화면('main');
         }}>mian</div>
         <div className='btnArea' onClick={e=> {
-          변경화면('state');
-        }}>State</div>
+          변경화면('useHock');
+        }}>useHock</div>
         <div className='btnArea' onClick={e=> {
           변경화면('application');
         }}>응용하기</div>
-        <div className='btnArea' onClick={e=> {
-          변경화면('effect');
-        }}>Effect</div>
         <div className='btnArea' onClick={e=> {
           변경화면('axios');
         }}>Axios</div>
@@ -560,17 +484,20 @@ function Main() {
         <div className='btnArea' onClick={e=> {
           변경화면('dataSave');
         }}>DataSave 방법</div>
+        <div className='btnArea' onClick={e=> {
+          변경화면('normal');
+        }}>일반코드</div>
       </nav>
       {화면 === 'default' && <Deafult onPage={propMove}/>}
       {화면 === 'main' && <MainAction onPage={propMove}/>}
-      {화면 === 'state' && <State onPage={propMove}/>}
+      {화면 === 'useHock' && <UseHock사용 onPage={propMove}/>}
       {화면 === 'application' && <Application onPage={propMove}/>}
-      {화면 === 'effect' && <Effect onPage={propMove}/>}
       {화면 === 'axios' && <Axi onPage={propMove}/>}
       {화면 === 'login' && <LoginAction onPage={propMove}/>}
       {화면 === 'context' && <Action onPage={propMove} />}
       {화면 === 'comp' && <Comp onPage={propMove} />}
       {화면 === 'dataSave' && <DataSave onPage={propMove} />}
+      {화면 === 'normal' && <Normal onPage={propMove} />}
     </div>
   )
 }
