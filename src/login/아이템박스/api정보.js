@@ -1,4 +1,13 @@
-import api from '../../ax/axSetting';
+import axios from 'axios';
+
+/** 서버 연동 설정 */
+const api = axios.create({
+    baseURL: 'http://localhost:8080/api',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    timeout: 1000
+});
 
 /** Item 목록 가져오기 */
 export const apiItemList = () => {
