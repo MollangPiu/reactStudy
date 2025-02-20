@@ -39,12 +39,6 @@ export default function 아이템박스() {
     }, [setItemDetail]);
 
 
-    useEffect(() => {
-        console.log("🔄 아이템박스 List 렌더링");
-        getItem();
-
-    }, []);
-
     return (
         <div>
             <h1>아이템박스</h1>

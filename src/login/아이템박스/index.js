@@ -37,13 +37,6 @@ export default function 아이템박스() {
         setItemDetail(res.data.data);
     }
 
-    useEffect(() => {
-        setInterval(() => {
-            getItem();
-        }, 1000);
-    }, []);
-
-
 
     return (
         <div>
