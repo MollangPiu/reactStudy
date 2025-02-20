@@ -38,7 +38,9 @@ export default function 아이템박스() {
     }
 
     useEffect(() => {
-        getItem();
+        setInterval(() => {
+            getItem();
+        }, 1000);
     }, []);
 
 

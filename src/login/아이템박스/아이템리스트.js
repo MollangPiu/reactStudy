@@ -5,6 +5,8 @@ export default function 아이템리스트({list, onHandlerGoodUp, onHandlerItem
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: '20px',
+                height: '100%',
+                overflow: 'scroll'
             }}>
                 {list.map(item => (
                     <div key={item.itemIdx}
@@ -21,6 +23,9 @@ export default function 아이템리스트({list, onHandlerGoodUp, onHandlerItem
                         <div style={{
                             fontSize: '25px',
                             fontWeight: 'bold',
+                            textOverflow: 'ellipsis',
+                            overflow: 'hidden',
+                            whiteSpace: 'nowrap',
                         }}>
                             {item.name}
                         </div>
