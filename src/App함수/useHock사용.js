@@ -47,7 +47,7 @@ export default function useHock사용(props) {
                   props.onPage('./filter');
                 }}>Filter 사용하기</a><br/>
 
-<h2>Reduce</h2>
+                <h2>Reduce</h2>
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();
                   props.onPage('./redu1');
@@ -129,6 +129,12 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('/callback3');
                 }}>useEffect버그</a><br/>
+
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/callback4');
+                }}>아이템박스 예시</a><br/>
+
                 <h2>Memo</h2>
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();

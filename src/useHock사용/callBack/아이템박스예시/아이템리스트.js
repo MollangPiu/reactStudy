@@ -1,4 +1,8 @@
-export default function 아이템리스트({list, onHandlerGoodUp, onHandlerItemDetail}) {
+import React from 'react';
+
+function 아이템리스트({list, onHandlerGoodUp, onHandlerItemDetail}) {
+
+    console.log("🔄 아이템리스트 렌더링");
 
     return (
         <div>
@@ -52,3 +56,5 @@ export default function 아이템리스트({list, onHandlerGoodUp, onHandlerItem
         </div>
     )
 }
+
+export default React.memo(아이템리스트);
