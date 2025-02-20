@@ -1,4 +1,5 @@
 export default function 아이템리스트({list, onHandlerGoodUp, onHandlerItemDetail}) {
+
     return (
         <div>
             <div style={{
