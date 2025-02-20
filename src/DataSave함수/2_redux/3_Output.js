@@ -14,11 +14,7 @@ export default function Output() {
                     console.log(input);
                     set텍스트(input);
                 } }/>
-            <input type="button" value="방해하기" onClick={
-                () => {
-                    set텍스트('방해하기');
-                }
-            }/>
+            <button onClick={() => set텍스트('방해하기')}>버튼 클릭</button>
             <p>{텍스트}</p>
         </div>
     )

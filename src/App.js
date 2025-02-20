@@ -65,6 +65,7 @@ import CallBack1 from './useHock사용/callBack/콜백사용이유/콜백사용�
 import CallBack2 from './useHock사용/callBack/콜백사용이유/콜백사용.js';
 import CallBack3 from './useHock사용/callBack/useEffect버그/index.js';
 import CallBack4 from './useHock사용/callBack/아이템박스예시/index.js';
+import CallBack5 from './useHock사용/callBack/아이템박스2/index.js';
 
 import Memo1 from './useHock사용/memo/메모사용이유/메모사용안함.js';
 import Memo2 from './useHock사용/memo/메모사용이유/메모사용.js';
@@ -201,6 +202,7 @@ class App extends Component {
             <Route path={'/callback2'} element={<CallBack2 />} />
             <Route path={'/callback3'} element={<CallBack3 />} />
             <Route path={'/callback4'} element={<CallBack4 />} />
+            <Route path={'/callback5'} element={<CallBack5 />} />
 
             <Route path={'/memo1'} element={<Memo1 />} />
             <Route path={'/memo2'} element={<Memo2 />} />

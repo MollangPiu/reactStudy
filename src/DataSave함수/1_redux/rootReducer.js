@@ -1,5 +1,5 @@
 // rootReducer.js
-import { combineReducers } from 'redux';
+import { dataReducer } from 'redux';
 
 const initialDateState = {
   today: new Date().toDateString()
@@ -17,7 +17,7 @@ function dateReducer(state = initialDateState, action) {
   }
 }
 
-const rootReducer = combineReducers({
+const rootReducer = dataReducer({
   date: dateReducer
 });
 

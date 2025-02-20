@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 /** 서버 연동 설정 */
 const api = axios.create({
     baseURL: 'http://localhost:8080/api',

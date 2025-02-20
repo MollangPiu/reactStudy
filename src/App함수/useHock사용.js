@@ -135,6 +135,11 @@ export default function useHock사용(props) {
                   props.onPage('/callback4');
                 }}>아이템박스 예시</a><br/>
 
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('/callback5');
+                }}>아이템박스 예시2</a><br/>
+
                 <h2>Memo</h2>
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();
