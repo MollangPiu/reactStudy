@@ -54,7 +54,7 @@ function Admin({data, dataSum}) {
             style={{
                 fontSize: '45px',
                 fontWeight: 'bold',
-                color: 0 === 0? 'black': 'blue',
+                color: dataSum === 0? 'black': 'blue',
             }}>{dataSum}</span><br/>
 
             <h3>주문 내용</h3>
