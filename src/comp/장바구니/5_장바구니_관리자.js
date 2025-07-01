@@ -12,6 +12,7 @@ function Study() {
 
     const [화면, set화면] = useState('user');
     const [주문내용, set주문내용] = useState([]);
+    const [합계, set합계] = useState(0);
 
     return (
         <div
@@ -28,21 +29,23 @@ function Study() {
             }
             handlerOrder={
                 val => {
+                    console.log(val);
+                    set합계(합계+val.price);
                     set주문내용([...주문내용, val]);
                 }
             }
             />}
             {화면 === 'admin' && <Admin
-                data={주문내용}
+                data={주문내용} dataSum={합계}
             />}
         </div>
     )
 }
 
-function Admin({data}) {
+function Admin({data, dataSum}) {
     return (
         <div>
-            <h1>관리자 화면면</h1>
+            <h1>관리자 화면</h1>
             <span style={{
                 fontSize: '20px',
                 fontWeight: 'bold',
@@ -51,10 +54,10 @@ function Admin({data}) {
             style={{
                 fontSize: '45px',
                 fontWeight: 'bold',
-                color: 0 === 0? 'black': 'blue',
-            }}>0</span><br/>
+                color: dataSum === 0? 'black': 'blue',
+            }}>{dataSum}</span><br/>
 
-            <h3>주문 내용용</h3>
+            <h3>주문 내용</h3>
             {data.map(item => (
                 <div>
                     {item.title}
