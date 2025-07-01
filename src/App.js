@@ -92,6 +92,11 @@ import MinWow from './login/minwow';
 
 import 아이템박스 from './login/아이템박스';
 
+import LoginJwt from './login/로그인jwt/Login.js';
+import JwtStudy from './login/로그인jwt/JWT연습.js';
+
+
+
 import Memo01 from './memo/Memo01'
 import Memo02 from './memo/Memo02'
 import Memo03 from './memo/Memo03'
@@ -222,6 +227,9 @@ class App extends Component {
             <Route path={'/test01'} element={<Test01 />} />
             <Route path={'/minwow'} element={<MinWow />} />
             <Route path={'/아이템박스'} element={<아이템박스 />} />
+
+            <Route path={'/jwtStudy'} element={<JwtStudy />} />
+            <Route path={'/loginJwt'} element={<LoginJwt />} />
 
             <Route path={'/memo01'} element={<Memo01 />} />
             <Route path={'/memo02'} element={<Memo02 />} />
@@ -399,6 +407,17 @@ function LoginAction(props) {
         e.preventDefault();
         props.onPage('/아이템박스');
       }}>아이템박스</a><br/>
+      <h1>로그인 JWT 기능</h1>
+
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/jwtStudy');
+      }}>JWT 연습</a><br/>
+      
+      <a className='mainDiv' onClick={e => {
+        e.preventDefault();
+        props.onPage('/loginJwt');
+      }}>JWT 로그인</a><br/>
     </div>
   )
 }
