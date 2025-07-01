@@ -1,9 +1,5 @@
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
-    data: dateReducer
-  });
-
 function dateReducer(state = '', action) {
     switch(action.type) {
         case 'INSERT':
@@ -16,5 +12,9 @@ function dateReducer(state = '', action) {
             return state;
     }
 }
+
+const rootReducer = combineReducers({
+    data: dateReducer
+});
 
 export default rootReducer;

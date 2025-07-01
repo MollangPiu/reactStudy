@@ -115,6 +115,7 @@ import LoginResult from './DataSave함수/Login결과';
 
 import Redux1 from './DataSave함수/1_redux/1_Redux사용';
 import Redux2 from './DataSave함수/2_redux/1_Start';
+import Redux3 from './DataSave함수/3_redux/1_Start';
 
 /*** 일반코드 */
 import 마이페이지1 from './일반코드/마이페이지1';
@@ -246,6 +247,7 @@ class App extends Component {
             <Route path={'/localLoginResult'} element={<LoginResult />} />
             <Route path={'/redux1'} element={<Redux1 />} />
             <Route path={'/redux2'} element={<Redux2 />} />
+            <Route path={'/redux3'} element={<Redux3 />} />
 
             <Route path={'/normalMypage'} element={<마이페이지1 />} />
 

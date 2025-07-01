@@ -38,6 +38,11 @@ export default function LocalStorage(props) {
                 e.preventDefault();
                 props.onPage('./redux2');
             }}>Redux 사용하기2</a><br/>
+
+            <a className='mainDiv' onClick={(e) => {
+                e.preventDefault();
+                props.onPage('./redux3');
+            }}>Redux 사용하기3</a><br/>
         </div>
     )
 }
