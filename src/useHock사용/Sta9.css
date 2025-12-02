@@ -1,0 +1,28 @@
+.style1 {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.style2 {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.font1 {
+    font-size: 20px;
+}
+
+.font2 {
+    font-size: 40px;
+}
+
+.back1 {
+    background-color: red;
+}
+.back2 {
+    background-color: blue;
+}

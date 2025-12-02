@@ -41,6 +41,10 @@ export default function useHock사용(props) {
                   e.preventDefault();
                   props.onPage('./sta8');
                 }}>다크모드</a><br/>
+                <a className='mainDiv' onClick={e => {
+                  e.preventDefault();
+                  props.onPage('./sta9');
+                }}>Style 정의해보기</a><br/>
                 <h2>Filter</h2>
                 <a className='mainDiv' onClick={e => {
                   e.preventDefault();
