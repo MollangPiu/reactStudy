@@ -161,7 +161,28 @@ export default function useHock사용(props) {
             </div>
         
 
-      
+
+
+            <div>
+              <h2>참고 자료 ( 수업 내용 )</h2>
+              <h4>25년 12월</h4>
+              <a className="mainDiv" onClick={e => {
+                e.preventDefault();
+                props.onPage('/2512first')
+              }}>input연습</a><br/>
+              <a className="mainDiv" onClick={e => {
+                e.preventDefault();
+                props.onPage('/2512cal')
+              }}>계산기</a><br/>
+              <a className="mainDiv" onClick={e => {
+                e.preventDefault();
+                props.onPage('/2512style')
+              }}>Style 변경하기</a><br/>
+              <a className="mainDiv" onClick={e => {
+                e.preventDefault();
+                props.onPage('/2512modal')
+              }}>모달창 열기</a><br/>
+            </div>
 
       
 
