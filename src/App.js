@@ -50,7 +50,9 @@ import Stat5 from './useHock사용/Sta5'
 import Stat6 from './useHock사용/Sta6'
 import Stat7 from './useHock사용/Sta7'
 import Stat8 from './useHock사용/Sta8'
-import Stat9 from './useHock사용/Sta9'
+import Stat9 from './useHock사용/Sta9';
+import Sta10 from './useHock사용/Sta10';
+
 import Redu1 from './useHock사용/Reduce1'
 import Redu2 from './useHock사용/Reduce2'
 import Reduce3 from './useHock사용/Reduce3'
@@ -213,6 +215,7 @@ class App extends Component {
             <Route path={'/sta7'} element={<Stat7 />} />
             <Route path={'/sta8'} element={<Stat8 />} />
             <Route path={'/sta9'} element={<Stat9 />} />
+            <Route path={'/sta10'} element={<Sta10 />} />
             <Route path={'/ref1'} element={<Ref1 />} />
             <Route path={'/ref2'} element={<Ref2 />} />
             <Route path={'/filter'} element={<Fil />} />
