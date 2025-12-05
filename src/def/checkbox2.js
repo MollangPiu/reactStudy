@@ -1,40 +1,33 @@
 import { useState } from 'react';
-import hob from '../data/hobby.json';
 
-function Checkbox2() {
+function App() {
 
-    const [hobbyList, setHobbyList] = useState([]);
-    const hobby = hob.hobby;
+  const [hobbyList, setHobbyList] = useState([]);
 
-    function handleChange(e) {
-        if(hobbyList.includes(e.target.value)) {
-            setHobbyList(hobbyList.filter(item => item !== e.target.value));
-        } else {
-            setHobbyList([...hobbyList, e.target.value]);
-        }
+  const handleHobby = (e) => {
+    const value = e.target.value;
+    const checked = e.target.checked;
+
+    if (checked) {
+      // 체크 → 배열에 추가
+      setHobbyList([...hobbyList, value]);
+    } else {
+      // 체크 해제 → 배열에서 제거
+      setHobbyList(hobbyList.filter(h => h !== value));
     }
+  };
 
-    return (
-        <div>
-            <h1>취미 고르기</h1>
-            {hobby.map((item, index) => (
-                <div key={index}>
-                <input
-                    type='checkbox'
-                    value={item.name} checked={hobbyList.includes(item.name)}
-                    onChange={handleChange}
-                    />
-                {item.name}
+  return (
+    <>
+      <h3>Check Box (취미)</h3>
+      <input type="checkbox" name="hobby" value="운동" onChange={handleHobby} />운동
+      <input type="checkbox" name="hobby" value="영화" onChange={handleHobby} />영화
+      <input type="checkbox" name="hobby" value="여행" onChange={handleHobby} />여행
 
-                </div>
-                ))}
-
-                <h1>체크 목록</h1>
-                {hobbyList.map((item, index) => (
-                    <div key={index}>{item}</div>
-                ))}
-        </div>
-    )
+      <br /><br />
+      <strong>좋아하는 취미:</strong> {hobbyList.join(', ')}
+    </>
+  );
 }
 
-export default Checkbox2;
+export default App;
