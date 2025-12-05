@@ -56,6 +56,9 @@ import Redu2 from './useHock사용/Reduce2'
 import Reduce3 from './useHock사용/Reduce3'
 import Reduce4 from './useHock사용/Reduce4'
 
+
+
+
 import Effect1 from './useHock사용/effect/1_마운트사용';
 import Effect2 from './useHock사용/effect/2_변경된값';
 import Effect3 from './useHock사용/effect/3_언마운트';
@@ -75,7 +78,26 @@ import Memo3 from './useHock사용/memo/useEffect버그/index.js';
 import Fil from './useHock사용/Fil'
 
 import Ref1 from './useHock사용/Ref1'
-import Ref2 from './useHock사용/Ref2'
+import Ref2 from './useHock사용/Ref2';
+
+
+
+
+
+/**
+ * 25년 12월 청양도립대 수업자료
+ */
+import First2512 from './useHock사용/sta_2512/input연습.js';
+import Cal2512 from './useHock사용/sta_2512/계산기.js';
+import Style2512 from './useHock사용/sta_2512/style변경1.js';
+import Modal2512 from './useHock사용/sta_2512/모달창열기.js';
+
+
+
+
+
+
+
 
 import Ax1 from './ax/ax01'
 import Ax2 from './ax/ax02'
@@ -194,6 +216,15 @@ class App extends Component {
             <Route path={'/ref1'} element={<Ref1 />} />
             <Route path={'/ref2'} element={<Ref2 />} />
             <Route path={'/filter'} element={<Fil />} />
+
+
+            <Route path={'/2512first'} element={<First2512 />} />
+            <Route path={'/2512cal'} element={<Cal2512 />} />
+            <Route path={'/2512style'} element={<Style2512 />} />
+            <Route path={'/2512modal'} element={<Modal2512 />} />
+
+
+
 
             <Route path={'/Redu1'} element={<Redu1 />} />
             <Route path={'/Redu2'} element={<Redu2 />} />
